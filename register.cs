@@ -8,5 +8,11 @@ namespace WebShop4;
 
 public class register
 {
-
+    string UserName;
+    string PassWord;
+    public register(string username, string password)
+    {
+        UserName = username;
+        PassWord = password;
+    }
 }
