@@ -1,6 +1,6 @@
 ﻿namespace WebShop4;
 
-internal class ForAdmin
+internal class ForAdmin : Customers
 {
 
 }
