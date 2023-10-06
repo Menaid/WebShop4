@@ -12,12 +12,12 @@ public class ForAdmin
     {
         string[] customers = File.ReadAllLines("../../../customers.txt");
 
-        //for (int i = 0; i < customers.Length; i++)
-        //{
-        //    var viewCustomers = customers[i];
-        //    Console.WriteLine((i + 1) + ". " + viewCustomers);
-        //}
-
+        for (int i = 0; i < customers.Length; i++)
+        {
+            var viewCustomers = customers[i];
+            Console.WriteLine((i + 1) + ". " + viewCustomers);
+        }
+        Console.WriteLine("Vilken användare vill du redigera?");
         for (int i = 0; i < customers.Length; i++)
         {
             Console.WriteLine(customers[i]);
