@@ -36,26 +36,31 @@ public class ForAdmin
             Console.WriteLine("Namn = 1 | Lösen = 2");
             Console.WriteLine(" ");
             var read = Console.ReadLine();
-            var hej = customs[0];
-            var hej1 = customs[1];
+           
             switch (read)
             {
                 case "1":
                     Console.WriteLine("Vad för namn?: ");
                     var NewName = Console.ReadLine();
                     customs[0] = NewName;
-                    
+                    string[] arr = customs.ToArray();
+                    customers = arr;
                     break;
                 case "2":
                     Console.WriteLine("Vad för namn?: ");
                     var NewPass = Console.ReadLine();
                     customs[1] = NewPass;
+                    arr = customs.ToArray();
+                    customers = arr;
                     break;
+                
             }
-           
         }
+        
 
     }
+
+    
 
     //public string ProductList()
     //{
