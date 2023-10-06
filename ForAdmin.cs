@@ -10,7 +10,7 @@ public class ForAdmin
     // string[] oversight = File.ReadAllLines("....txt");
     public static void CustomerInfo()
     {
-        string[] customers = File.ReadAllLines("../../../customers.txt");
+        string[] customers = File.ReadAllLines("../../../admins.txt");
 
         //for (int i = 0; i < customers.Length; i++)
         //{
