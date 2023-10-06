@@ -60,8 +60,6 @@ public class ForAdmin
 
     }
 
-    
-
     //public string ProductList()
     //{
 
