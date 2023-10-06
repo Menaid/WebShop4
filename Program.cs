@@ -1,4 +1,5 @@
-﻿using WebShop4;
+using WebShop4;
+
 
 Console.WriteLine("Do you want to register or log in?:");
 Console.Write("| L = Login | R = Register | ");
@@ -14,4 +15,3 @@ switch (A.ToString().ToLower())
         register.reg();
         break;
 }
-
