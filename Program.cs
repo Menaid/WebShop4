@@ -53,6 +53,5 @@ void LogIn()
     }
 }
 
-Console.WriteLine("Hello, World!");
 ForAdmin.CustomerInfo();
 

@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-Benny
-Jimmy
-Manne
-Lotta
-Inga
-=======
 Menaid-1
 Lukas-2
 Irina-3
 Jimmy-4
 Mohammad-5
 användare-lösen
->>>>>>> admin
