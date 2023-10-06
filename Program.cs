@@ -1,7 +1,5 @@
+using WebShop4;
 
-<<<<<<< HEAD
 ForAdmin.CustomerInfo();
-=======
-register.startCustom();
->>>>>>> customers
 
+register.startCustom();
