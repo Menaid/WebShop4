@@ -1,7 +1,4 @@
-﻿using System.Net.WebSockets;
-using System.Runtime.InteropServices.Marshalling;
-
-namespace WebShop4;
+﻿namespace WebShop4;
 
 public class ForAdmin
 {
@@ -23,6 +20,7 @@ public class ForAdmin
             var viewCustomers = customers[i];
             Console.WriteLine((i + 1) + ". " + viewCustomers);
         }
+        Console.WriteLine("Vilken användare vill du ändra på?");  // La till lite förtydligande där man blir tillfrågad om vem man vill redigera på.
 
         var a = Console.ReadLine();
         int b = int.Parse(a);
@@ -36,27 +34,27 @@ public class ForAdmin
             Console.WriteLine("Namn = 1 | Lösen = 2");
             Console.WriteLine(" ");
             var read = Console.ReadLine();
-           
+
             switch (read)
             {
                 case "1":
-                    Console.WriteLine("Vad för namn?: ");
+                    Console.WriteLine("Vad ska ditt nya namn vara?: ");
                     var NewName = Console.ReadLine();
                     customs[0] = NewName;
                     string[] arr = customs.ToArray();
                     customers = arr;
                     break;
                 case "2":
-                    Console.WriteLine("Vad för namn?: ");
+                    Console.WriteLine("Vad ska ditt nya lösenord vara?: ");
                     var NewPass = Console.ReadLine();
                     customs[1] = NewPass;
                     arr = customs.ToArray();
                     customers = arr;
                     break;
-                
+
             }
         }
-        
+
 
     }
 

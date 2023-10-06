@@ -2,4 +2,4 @@ using WebShop4;
 
 ForAdmin.CustomerInfo();
 
-register.startCustom();
+//register.startCustom();
