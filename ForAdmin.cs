@@ -1,7 +1,4 @@
-﻿using System.Net.WebSockets;
-using System.Runtime.InteropServices.Marshalling;
-
-namespace WebShop4;
+﻿namespace WebShop4;
 
 public class ForAdmin
 {
@@ -13,31 +10,31 @@ public class ForAdmin
     // string[] oversight = File.ReadAllLines("....txt");
     public static void CustomerInfo()
     {
-        
+
         string[] customers = File.ReadAllLines("../../../admins.txt");
         List<string> customs = new List<string>();
         var count = customs.Count();
         foreach (var item in customers)
         {
             customs.Add(item);
-        
+
             customs = new List<string>(item.Split("-"));
         }
 
-<<<<<<< HEAD
+
         for (int i = 0; i < customers.Length; i++)
         {
             var viewCustomers = customers[i];
             Console.WriteLine((i + 1) + ". " + viewCustomers);
         }
         Console.WriteLine("Vilken användare vill du redigera?");
-=======
+
         foreach (var item in customs)
         {
             Console.WriteLine(item);
         }
 
->>>>>>> 10685729bdc2c2c3e72f8a25a34257c2da20114a
+
         for (int i = 0; i < customers.Length; i++)
         {
             var viewCustomers = customers[i];
