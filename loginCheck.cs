@@ -1,4 +1,5 @@
-﻿namespace Webshop4;
+﻿
+namespace Webshop4;
 
 public class CheckLogin
 {
@@ -33,7 +34,7 @@ public class CheckLogin
             Console.WriteLine("Welcome!");
 
         }
-        else 
+        else
         {
             Console.WriteLine("Wrong username or password");
         }
