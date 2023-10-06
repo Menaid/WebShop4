@@ -1,4 +1,5 @@
-﻿using System.Net.WebSockets;
+﻿using System.Globalization;
+using System.Net.WebSockets;
 using System.Runtime.InteropServices.Marshalling;
 
 namespace WebShop4;
@@ -15,6 +16,8 @@ public class ForAdmin
     {
 
         string[] customers = File.ReadAllLines("../../../admins.txt");
+        string[] temp = File.ReadAllLines("../../../tempfile.txt");
+        
         List<string> customs = new List<string>();
         var count = customs.Count();
 
@@ -43,22 +46,26 @@ public class ForAdmin
                     Console.WriteLine("Vad för namn?: ");
                     var NewName = Console.ReadLine();
                     customs[0] = NewName;
-                    string[] arr = customs.ToArray();
-                    customers = arr;
+                    string tem = @"../../../tempfile.txt";
+                    string tempo = @"../../../customers.txt";
+                    File.AppendAllText(tem, NewName + "-" + customs[1] + Environment.NewLine);
+                    
                     break;
                 case "2":
-                    Console.WriteLine("Vad för namn?: ");
+                    Console.WriteLine("Vad för lösen?: ");
                     var NewPass = Console.ReadLine();
                     customs[1] = NewPass;
-                    arr = customs.ToArray();
-                    customers = arr;
+                    
                     break;
-                
             }
         }
-        
+
 
     }
+
+
+    //string[] arr = customs.ToArray();
+    //customers = arr;
 
     //public string ProductList()
     //{
