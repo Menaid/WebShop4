@@ -20,7 +20,7 @@ public class ForAdmin
         foreach (var item in customers)
         {
             customs.Add(item);
-            
+        
             customs = new List<string>(item.Split("-"));
         }
 
