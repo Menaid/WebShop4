@@ -16,14 +16,17 @@ public class ForAdmin
         
         string[] customers = File.ReadAllLines("../../../admins.txt");
         List<string> customs = new List<string>();
-
-        
+        var count = customs.Count();
         foreach (var item in customers)
         {
-
-            
             customs.Add(item);
-         
+            
+            customs = new List<string>(item.Split("-"));
+        }
+
+        foreach (var item in customs)
+        {
+            Console.WriteLine(item);
         }
 
         for (int i = 0; i < customers.Length; i++)
