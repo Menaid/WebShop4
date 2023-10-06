@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 ﻿namespace WebShop4;
+=======
+﻿using System.Globalization;
+using System.Net.WebSockets;
+using System.Runtime.InteropServices.Marshalling;
+
+namespace WebShop4;
+>>>>>>> 39f175ac1e55d9635fd21524f264e4dfd7247507
 
 public class ForAdmin
 {
@@ -12,6 +20,8 @@ public class ForAdmin
     {
 
         string[] customers = File.ReadAllLines("../../../admins.txt");
+        string[] temp = File.ReadAllLines("../../../tempfile.txt");
+        
         List<string> customs = new List<string>();
         var count = customs.Count();
 
@@ -41,22 +51,34 @@ public class ForAdmin
                     Console.WriteLine("Vad ska ditt nya namn vara?: ");
                     var NewName = Console.ReadLine();
                     customs[0] = NewName;
-                    string[] arr = customs.ToArray();
-                    customers = arr;
+                    string tem = @"../../../tempfile.txt";
+                    string tempo = @"../../../customers.txt";
+                    File.AppendAllText(tem, NewName + "-" + customs[1] + Environment.NewLine);
+                    
                     break;
                 case "2":
+<<<<<<< HEAD
                     Console.WriteLine("Vad ska ditt nya lösenord vara?: ");
+=======
+                    Console.WriteLine("Vad för lösen?: ");
+>>>>>>> 39f175ac1e55d9635fd21524f264e4dfd7247507
                     var NewPass = Console.ReadLine();
                     customs[1] = NewPass;
-                    arr = customs.ToArray();
-                    customers = arr;
+                    
                     break;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 39f175ac1e55d9635fd21524f264e4dfd7247507
             }
         }
 
 
     }
+
+
+    //string[] arr = customs.ToArray();
+    //customers = arr;
 
     //public string ProductList()
     //{

@@ -55,7 +55,6 @@ public class register
             Console.WriteLine("Not Correct");
         }
     }
-
     public static void reg()
     {
         Console.WriteLine("Skriv användarnamn: ");
