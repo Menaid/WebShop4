@@ -13,21 +13,10 @@ public class ForAdmin
     // string[] oversight = File.ReadAllLines("....txt");
     public static void CustomerInfo()
     {
-        
+
         string[] customers = File.ReadAllLines("../../../admins.txt");
         List<string> customs = new List<string>();
         var count = customs.Count();
-        foreach (var item in customers)
-        {
-            customs.Add(item);
-        
-            customs = new List<string>(item.Split("-"));
-        }
-
-        foreach (var item in customs)
-        {
-            Console.WriteLine(item);
-        }
 
         for (int i = 0; i < customers.Length; i++)
         {
@@ -39,11 +28,31 @@ public class ForAdmin
         int b = int.Parse(a);
         b -= 1;
         var AdminChoice = customers[b];
-        Console.WriteLine(customers[b]);
 
         if (AdminChoice == customers[b])
         {
-
+            customs = new List<string>(AdminChoice.Split("-"));
+            Console.WriteLine("Vill du ändra namn eller lösen");
+            Console.WriteLine("Namn = 1 | Lösen = 2");
+            Console.WriteLine(" ");
+            var read = Console.ReadLine();
+            var hej = customs[0];
+            var hej1 = customs[1];
+            switch (read)
+            {
+                case "1":
+                    Console.WriteLine("Vad för namn?: ");
+                    var NewName = Console.ReadLine();
+                    customs[0] = NewName;
+                    
+                    break;
+                case "2":
+                    Console.WriteLine("Vad för namn?: ");
+                    var NewPass = Console.ReadLine();
+                    customs[1] = NewPass;
+                    break;
+            }
+           
         }
 
     }
