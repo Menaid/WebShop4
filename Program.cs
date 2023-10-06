@@ -1,3 +1,3 @@
 
-ForAdmin.CustomerInfo();
 
+Console.WriteLine("Test");
