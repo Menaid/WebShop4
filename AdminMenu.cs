@@ -1,28 +1,28 @@
 ﻿
 namespace WebShop4;
 
-public class UserMenu
+public class AdminMenu
 {
     public static void Menu()
     {
         Console.WriteLine("Menu:");
-        Console.Write("Varukorg = V\nProduktlista = P\nGenomförda beställningar och se kvitton = G\nExit = E");
+        Console.Write("Redigera och visa kund info = R\nÄndra produktlista = P\nVisa transaktioner = T\nExit = E");
         Console.WriteLine(" ");
         string A = Console.ReadLine();
 
         switch (A.ToString().ToLower())
         {
-            case "v":
-                Console.WriteLine("Varukorg");
+            case "r":
+                Console.WriteLine("Redigera och visa kund info");
                 break;
             case "p":
-                Console.WriteLine("Produktlista");
+                Console.WriteLine("Ändra produktlista");
                 break;
-            case "g":
+            case "t":
                 Console.WriteLine("Genomförda beställningar och kvitton");
                 break;
             case "e":
-                register.LoginUser();
+                register.startCustom();
                 break;
         }
     }

@@ -7,5 +7,6 @@ using WebShop4;
 
 //ForAdmin.CustomerInfo();
 
-UserMenu.Menu();
+//UserMenu.Menu();
 
+AdminMenu.Menu();

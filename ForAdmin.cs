@@ -63,8 +63,10 @@ public class ForAdmin
 
 
     }
-
-
+    public static void EditItemList()
+    {
+        string[] customers = File.ReadAllLines("../../../produktlista.txt");
+    }
     //string[] arr = customs.ToArray();
     //customers = arr;
 
@@ -77,5 +79,6 @@ public class ForAdmin
     //{
 
     //}
-
 }
+
+
