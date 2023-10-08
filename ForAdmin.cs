@@ -2,6 +2,14 @@
 
 public class ForAdmin
 {
+    string ItemName;
+    string ItemCost;
+    public ForAdmin(string iName, string iCost)
+    {
+        ItemName = iName;
+        ItemCost = iCost;
+    }
+
     bool editCustomerInfo = true;
     bool editeProductList = true;
     bool Oversight = true;
@@ -65,7 +73,40 @@ public class ForAdmin
     }
     public static void EditItemList()
     {
-        string[] customers = File.ReadAllLines("../../../produktlista.txt");
+        string[] pLista = File.ReadAllLines("../../../produktlista.txt");
+
+        Console.WriteLine("\nLägg till produkt = L\nTa bort produkt = T");
+        Console.WriteLine();
+        string A = Console.ReadLine();
+
+        switch (A.ToString().ToLower())
+        {
+            case "t":
+                Console.WriteLine("Vad ska tas bort?");
+                foreach(string item in pLista)
+                {
+                    Console.WriteLine(item);
+                }
+                
+                break;
+            case "l":
+                Console.WriteLine("Vad ska läggas till?");
+                
+                Console.WriteLine("Namn på produkt: ");
+                string iName = Console.ReadLine();
+                Console.WriteLine("Produktpris: ");
+                string iCost = Console.ReadLine();
+
+                Item product = new Item(itemName: iName, itemCost: iCost);
+
+                string NC = iName + "-" + iCost;
+
+                string loca = @"../../../produktlista.txt";
+                File.AppendAllText(loca, NC + Environment.NewLine);
+
+                break;
+        }
+        
     }
     //string[] arr = customs.ToArray();
     //customers = arr;

@@ -13,10 +13,10 @@ public class AdminMenu
         switch (A.ToString().ToLower())
         {
             case "r":
-                Console.WriteLine("Redigera och visa kund info");
+                ForAdmin.CustomerInfo();
                 break;
             case "p":
-                Console.WriteLine("Ändra produktlista");
+                ForAdmin.EditItemList();
                 break;
             case "t":
                 Console.WriteLine("Genomförda beställningar och kvitton");
