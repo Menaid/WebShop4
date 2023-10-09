@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WebShop4;
+﻿namespace WebShop4;
 
 public class register
 {
@@ -18,7 +12,7 @@ public class register
 
     public static void startCustom()
     {
-        Console.WriteLine("Do you want to register or log in?:");
+        Console.WriteLine("Vill du registrera dig som en ny användare eller logga in som en befintlig?:");
         Console.Write("| L = Login | R = Register | ");
         Console.WriteLine(" ");
         string A = Console.ReadLine();
@@ -35,9 +29,9 @@ public class register
     }
     public static void Login()
     {
-        Console.WriteLine("Skriv användarnamn: ");
+        Console.WriteLine("Ange ditt användarnamn: ");
         string Usname = Console.ReadLine();
-        Console.WriteLine("Skriv Lösenord: ");
+        Console.WriteLine("Ange ditt Lösenord: ");
         string Paword = Console.ReadLine();
         string[] lines = File.ReadAllLines(@"../../../customers.txt");
         List<string> newwords = new List<string>();
@@ -46,20 +40,20 @@ public class register
             newwords = new List<string>(item.Split("-"));
             if (Usname == newwords[0] && Paword == newwords[1])
             {
-                Console.WriteLine("Correct");
+                Console.WriteLine("Välkommen tillbaka!");
                 break;
             }
         }
         if (Usname != newwords[0] || Paword != newwords[1])
         {
-            Console.WriteLine("Not Correct");
+            Console.WriteLine("Fel, försök igen.");
         }
     }
     public static void reg()
     {
-        Console.WriteLine("Skriv användarnamn: ");
+        Console.WriteLine("Vänligen ange ett användarnamn: ");
         string Uname = Console.ReadLine();
-        Console.WriteLine("Skriv Lösenord: ");
+        Console.WriteLine("Vänligen ange ett lösenord: ");
         string Pword = Console.ReadLine();
 
         customer custom = new customer(username: Uname, password: Pword);
