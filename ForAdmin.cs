@@ -19,27 +19,27 @@ public class ForAdmin
     public static void CustomerInfo()
     {
 
-        string[] customers = File.ReadAllLines("../../../admins.txt");
+        string[] customers = File.ReadAllLines("../../../admins.txt");// gör array av fil med användare
         string[] temp = File.ReadAllLines("../../../tempfile.txt");
 
-        List<string> customs = new List<string>();
+        List<string> customs = new List<string>(); // skapar ny lista med namnet customs
         var count = customs.Count();
 
-        for (int i = 0; i < customers.Length; i++)
+        for (int i = 0; i < customers.Length; i++)//skriver ut lista med användare
         {
             var viewCustomers = customers[i];
             Console.WriteLine((i + 1) + ". " + viewCustomers);
         }
-        Console.WriteLine("Vilken användare vill du ändra på?");  // La till lite förtydligande där man blir tillfrågad om vem man vill redigera på.
-
+        
+        Console.WriteLine("Vilken användare vill du ändra på?");
         var a = Console.ReadLine();
-        int b = int.Parse(a);
-        b -= 1;
-        var AdminChoice = customers[b];
+        int b = int.Parse(a);//string a to int a, to variable b
+        b -= 1;// b-1 pga list index börjar på 0
+        var AdminChoice = customers[b]; //ny variabel som är lika med lista av användare[platsnummer val]
 
         if (AdminChoice == customers[b])
         {
-            customs = new List<string>(AdminChoice.Split("-"));
+            customs = new List<string>(AdminChoice.Split("-"));//tar bort "-" från lista customs och
             Console.WriteLine("Vill du ändra namn eller lösen");
             Console.WriteLine("Namn = 1 | Lösen = 2");
             Console.WriteLine(" ");
@@ -68,27 +68,60 @@ public class ForAdmin
                     break;
             }
         }
+        //string[] arr = customs.ToArray();
+        //customers = arr;
 
+        //public string ProductList()
+        //{
 
+        //}
+
+        //public string Oversight()
+        //{
+
+        //}
     }
     public static void EditItemList()
     {
-        string[] pLista = File.ReadAllLines("../../../produktlista.txt");
+        Console.WriteLine("\nLägg till produkt = L\nTa bort produkt = T\nExit = E\n");
+        string A = Console.ReadLine(); //admin svar
+                
+        string[] lines = File.ReadAllLines("../../../produktlista.txt");//gör en array av fil
+        string tempFile = @"../../../tempfile.txt";
+        bool deleted = false;
 
-        Console.WriteLine("\nLägg till produkt = L\nTa bort produkt = T");
-        Console.WriteLine();
-        string A = Console.ReadLine();
-
-        switch (A.ToString().ToLower())
+        switch (A.ToString().ToLower())//gör en switch där admin svar görs till string med små bokstäver
         {
             case "t":
-                Console.WriteLine("Vad ska tas bort?");
-                foreach(string item in pLista)
+                Console.WriteLine("\nVad ska tas bort?\n");
+                foreach(string item in lines)
                 {
                     Console.WriteLine(item);
+                }//visar hela produktlistan
+                Console.WriteLine("\nNamn på produkt: ");
+                string pName = Console.ReadLine();
+
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    string[] fields = lines[i].Split("-");
+                    if(pName == fields[0])
+                    {
+                        //lines.Remove(fields[0], fields[1]);
+                    }
                 }
+
                 
+                //int b = int.Parse(pName);//string pName to int pName, to variable b
+                //b --;// b-1 pga list index börjar på 0
+                //var pChoice = lines[b]; //ny variabel som är lika med lista av användare[platsnummer val]
+
+                //if (pChoice == lines[b])
+                //{
+                //    string produktlista = @"../../../produktlista.txt";
+                //    //File.AppendAllText(produktlista,  );
+                //}
                 break;
+
             case "l":
                 Console.WriteLine("Vad ska läggas till?");
                 
@@ -97,29 +130,21 @@ public class ForAdmin
                 Console.WriteLine("Produktpris: ");
                 string iCost = Console.ReadLine();
 
-                Item product = new Item(itemName: iName, itemCost: iCost);
-
                 string NC = iName + "-" + iCost;
 
                 string loca = @"../../../produktlista.txt";
-                File.AppendAllText(loca, NC + Environment.NewLine);
+                File.AppendAllText(loca, NC + "\n");
+                Console.Clear();
+                EditItemList();
 
+                break;
+            case "e":
+                AdminMenu.Menu();
                 break;
         }
         
     }
-    //string[] arr = customs.ToArray();
-    //customers = arr;
-
-    //public string ProductList()
-    //{
-
-    //}
-
-    //public string Oversight()
-    //{
-
-    //}
+    
 }
 
 
