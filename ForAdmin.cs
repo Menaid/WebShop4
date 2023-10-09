@@ -47,7 +47,7 @@ public class ForAdmin
                     customers = arr;
                     break;
                 case "2":
-                    Console.WriteLine("Vad för namn?: ");
+                    Console.WriteLine("Vad för lösen?: ");
                     var NewPass = Console.ReadLine();
                     customs[1] = NewPass;
                     arr = customs.ToArray();
