@@ -119,6 +119,8 @@ public class register
 
         string loca = @"../../../customers.txt";
         File.AppendAllText(loca, UP + Environment.NewLine);
+        Console.Clear();
+        adm.AdminChoice();
     }
 
 }

@@ -4,7 +4,7 @@ public class NewAdmin
 {
     public static void remItem()
     {
-        string[] lines = File.ReadAllLines("../../../produktlista.txt");//gör en array av fil
+        string[] lines = File.ReadAllLines(@"../../../produktlista.txt");//gör en array av fil
         List<string> product = new List<string>();
 
         Console.WriteLine("\nVad ska tas bort?\n");
@@ -20,18 +20,27 @@ public class NewAdmin
 
         Console.WriteLine("Vilken vill du ta bort?: ");
         string remove = Console.ReadLine();
-        int c = int.Parse(remove);
-        int NewRemove = c - 1;
-        for (int i = 0; i < product.Count(); i++)
+        if(remove != "")
         {
-            if (product[i] == product[NewRemove])
+            int c = int.Parse(remove);
+            int NewRemove = c - 1;
+            for (int i = 0; i < product.Count(); i++)
             {
-                product.Remove(product[i]);
-                File.WriteAllLines("../../../produktlista.txt", product);
-                Console.Clear();
-                Menu.AdminChoice();
+                if (product[i] == product[NewRemove])
+                {
+                    product.Remove(product[i]);
+                    File.WriteAllLines("../../../produktlista.txt", product);
+                    Console.Clear();
+                    adm.AdminChoice();
+                }
             }
         }
+        else
+        {
+            Console.Clear();
+            adm.AdminChoice();
+        }
+        
     }
 
     public static void addItem()
@@ -41,11 +50,18 @@ public class NewAdmin
         string iName = Console.ReadLine();
         Console.WriteLine("Produktpris: ");
         string iCost = Console.ReadLine();
+
+        if (iName == "" || iCost == "")
+        {
+            Console.Clear();
+            adm.AdminChoice();
+        }
+
         string NC = iName + "-" + iCost;
         string loca = @"../../../produktlista.txt";
-        File.AppendAllText(loca, NC + "\n");
+        File.AppendAllText(loca, NC + Environment.NewLine);
         Console.Clear();
-        Menu.AdminChoice();
+        adm.AdminChoice();
     }
 
     public static void CustomerInfo()
@@ -88,7 +104,8 @@ public class NewAdmin
         }
         customers[b] = customs[0] + "-" + customs[1];
         File.WriteAllLines("../../../customers.txt", customers);
-
+        Console.Clear();
+        adm.AdminChoice();
     }
 }
 
