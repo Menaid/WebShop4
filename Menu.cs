@@ -48,6 +48,7 @@
             Console.WriteLine("2. Tabort en produkt i sortimentet");
             Console.WriteLine("3. Visa och redigera kundinfo");
             Console.WriteLine("4. Visa transaktioner");
+            Console.WriteLine("5. Logga ut");
             adminChoice = Console.ReadLine();
 
             while (run)
@@ -57,12 +58,12 @@
                 {
                     case "1":
 
-                        AdminChoice();
+
                         run = false;
                         break;
                     case "2":
 
-                        AdminChoice();
+
                         run = false;
                         break;
                     case "3":
@@ -91,14 +92,14 @@
         public static void UserMenu()
         {
             Console.WriteLine("Menu:");
-            Console.Write("Varukorg = V\nProduktlista = P\nGenomförda beställningar och se kvitton = G\nExit = E");
+            Console.Write("Se din varukorg = V\nProduktlista = P\nGenomförda beställningar och se kvitton = G\nExit = E");
             Console.WriteLine(" ");
             string A = Console.ReadLine();
 
             switch (A.ToString().ToLower())
             {
                 case "v":
-                    Console.WriteLine("Varukorg");
+                    Console.WriteLine("Se din varukorg");
                     break;
                 case "p":
                     Console.WriteLine("Produktlista");
