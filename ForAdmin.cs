@@ -44,7 +44,7 @@ public class ForAdmin
                 Console.WriteLine("Vad ska ditt nya namn vara?: ");
                 var NewName = Console.ReadLine();
                 customs[0] = NewName;
-                string tem = @"../../../tempfile.txt";
+               
                 string tempo = @"../../../customers.txt";
 
 
