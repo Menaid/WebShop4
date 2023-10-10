@@ -18,15 +18,14 @@
                 switch (userInput)
                 {
                     case "l":
-                       
+                        register.Login();
                         run = false;
                         break;
                     case "r":
-                        
+                        register.reg();
                         run = false;
                         break;
                     case "a":
-                        
                         AdminChoice();
                         run = false;
                         break;
@@ -68,7 +67,12 @@
                         break;
                     case "3":
 
-                        AdminChoice();
+                        Console.WriteLine("Vill du redigera kundinfo?");
+                        string input = Console.ReadLine().ToLower();
+                        if (input == "ja")
+                        {
+                            ForAdmin.CustomerInfo();
+                        }
                         run = false;
                         break;
                     case "4":
