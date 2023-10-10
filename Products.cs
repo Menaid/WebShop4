@@ -9,7 +9,6 @@ namespace WebShop4
 
         static void ProductList()
         {
-            List<string> Items = new List<string>();
             string[] ItemsInCollection = File.ReadAllLines("../../../produktlista.txt");
 
             foreach (var item in ItemsInCollection)
