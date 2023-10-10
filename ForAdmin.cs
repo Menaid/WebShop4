@@ -74,7 +74,7 @@ public class ForAdmin
         //public string ProductList()
         //{
 
-        //}
+        //} 
 
         //public string Oversight()
         //{
@@ -101,7 +101,21 @@ public class ForAdmin
                 }
                 Console.WriteLine("Vilken ta bort?: ");
                 string remove = Console.ReadLine();
-                int NewRemove = remove(); 
+                int c = int.Parse(remove);
+                int NewRemove = c - 1;
+                string d = NewRemove.ToString();
+                for (int i = 0; i < lines.Count(); i++)
+                {
+                    if (lines[i] == d)
+                    {
+                        //lines[]
+                        File.ReadAllLines()
+                        //File.Delete(lines[NewRemove]);
+                    }
+                }
+                    
+                
+                
                 break;
 
             case "l":
