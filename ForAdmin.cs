@@ -12,7 +12,7 @@ public class ForAdmin
     {
 
         string[] customers = File.ReadAllLines("../../../customers.txt");
-    
+
         List<string> customs = new List<string>();
         var count = customs.Count();
 
@@ -37,46 +37,45 @@ public class ForAdmin
 
         switch (read)
         {
-<<<<<<< HEAD
             customs = new List<string>(AdminChoice.Split("-"));
             Console.WriteLine("Vill du ändra namn eller lösen");
             Console.WriteLine("Namn = 1 | Lösen = 2");
             Console.WriteLine(" ");
-            var read = Console.ReadLine();
-           
-            switch (read)
-            {
-                case "1":
-                    Console.WriteLine("Vad för namn?: ");
-                    var NewName = Console.ReadLine();
-                    customs[0] = NewName;
-                    string[] arr = customs.ToArray();
-                    customers = arr;
-                    break;
-                case "2":
-                    Console.WriteLine("Vad för lösen?: ");
-                    var NewPass = Console.ReadLine();
-                    customs[1] = NewPass;
-                    arr = customs.ToArray();
-                    customers = arr;
-                    break;
-                
-            }
-=======
+            var readN = Console.ReadLine();
+            
+
+        switch (read)
+        {
             case "1":
-                Console.WriteLine("Vad ska ditt nya namn vara?: ");
+                Console.WriteLine("Vad för namn?: ");
                 var NewName = Console.ReadLine();
-                customs[0] = NewName;               
+                customs[0] = NewName;
+                string[] arr = customs.ToArray();
+                customers = arr;
                 break;
             case "2":
-
-                Console.WriteLine("Vad ska ditt nya lösenord vara?: ");
-
+                Console.WriteLine("Vad för lösen?: ");
                 var NewPass = Console.ReadLine();
                 customs[1] = NewPass;
-
+                arr = customs.ToArray();
+                customers = arr;
                 break;
->>>>>>> c58d1e36b34ec69777fcf8beed17dd49d6293291
+
+        }
+
+            case "1":
+            Console.WriteLine("Vad ska ditt nya namn vara?: ");
+            var NewName = Console.ReadLine();
+            customs[0] = NewName;
+            break;
+        case "2":
+
+            Console.WriteLine("Vad ska ditt nya lösenord vara?: ");
+
+            var NewPass = Console.ReadLine();
+            customs[1] = NewPass;
+
+            break;
         }
         customers[b] = customs[0] + "-" + customs[1];
 

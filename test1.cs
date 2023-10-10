@@ -1,6 +1,5 @@
-﻿namespace WebShop4
+﻿namespace WebShop4;
+
+public class test1
 {
-    public class test1
-    {
-    }
 }
