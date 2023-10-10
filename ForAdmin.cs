@@ -87,7 +87,8 @@ public class ForAdmin
         string A = Console.ReadLine(); //admin svar
                 
         string[] lines = File.ReadAllLines("../../../produktlista.txt");//gör en array av fil
-        string tempFile = @"../../../tempfile.txt";
+        List<string> product = new List<string>();
+        
         bool deleted = false;
 
         switch (A.ToString().ToLower())//gör en switch där admin svar görs till string med små bokstäver
@@ -99,23 +100,28 @@ public class ForAdmin
                     var a = i + 1;
                     Console.WriteLine(a +". "+ lines[i]);
                 }
+                foreach (string item in lines)
+                {
+                    product.Add(item);
+                   
+                }
+
                 Console.WriteLine("Vilken ta bort?: ");
                 string remove = Console.ReadLine();
                 int c = int.Parse(remove);
                 int NewRemove = c - 1;
                 string d = NewRemove.ToString();
-                for (int i = 0; i < lines.Count(); i++)
+                for (int i = 0; i < product.Count(); i++)
                 {
-                    if (lines[i] == d)
+                    if (product[i] == product[NewRemove])
                     {
-                        //lines[]
-                        File.ReadAllLines()
-                        //File.Delete(lines[NewRemove]);
+                                               
+                        product.Remove(product[i]);
+                        File.WriteAllLines("../../../produktlista.txt", product);
+                        
                     }
                 }
-                    
-                
-                
+
                 break;
 
             case "l":
