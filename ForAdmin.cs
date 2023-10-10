@@ -14,8 +14,6 @@ public class ForAdmin
     bool editeProductList = true;
     bool Oversight = true;
 
-    // string[] products = File.ReadAllLines(".....txt");
-    // string[] oversight = File.ReadAllLines("....txt");
     public static void CustomerInfo()
     {
 
@@ -68,18 +66,7 @@ public class ForAdmin
                     break;
             }
         }
-        //string[] arr = customs.ToArray();
-        //customers = arr;
-
-        //public string ProductList()
-        //{
-
-        //} 
-
-        //public string Oversight()
-        //{
-
-        //}
+        
     }
     public static void EditItemList()
     {
@@ -103,7 +90,6 @@ public class ForAdmin
                 foreach (string item in lines)
                 {
                     product.Add(item);
-                   
                 }
 
                 Console.WriteLine("Vilken ta bort?: ");
@@ -114,14 +100,11 @@ public class ForAdmin
                 for (int i = 0; i < product.Count(); i++)
                 {
                     if (product[i] == product[NewRemove])
-                    {
-                                               
+                    {                     
                         product.Remove(product[i]);
-                        File.WriteAllLines("../../../produktlista.txt", product);
-                        
+                        File.WriteAllLines("../../../produktlista.txt", product);  
                     }
                 }
-
                 break;
 
             case "l":
@@ -144,9 +127,7 @@ public class ForAdmin
                 AdminMenu.Menu();
                 break;
         }
-        
     }
-    
 }
 
 

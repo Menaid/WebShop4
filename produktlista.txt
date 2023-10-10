@@ -6,4 +6,3 @@ sak-7
 sak-8
 sak-1
 sak-9
-pickle-20
