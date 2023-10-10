@@ -1,5 +1,4 @@
-﻿
-namespace WebShop4;
+﻿namespace WebShop4;
 
 public class customer : register
 {
@@ -7,8 +6,8 @@ public class customer : register
     {
 
     }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> loginCheck
+
+
+

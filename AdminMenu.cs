@@ -13,16 +13,16 @@ public class AdminMenu
         switch (A.ToString().ToLower())
         {
             case "r":
-                ForAdmin.CustomerInfo();
+                //ForAdmin.CustomerInfo();
                 break;
             case "p":
-                ForAdmin.EditItemList();
+                NewAdmin.EditItemList();
                 break;
             case "t":
                 Console.WriteLine("Genomförda beställningar och kvitton");
                 break;
             case "e":
-                register.startCustom();
+                //register.startCustom();
                 break;
         }
     }

@@ -4,7 +4,6 @@ Kat-100
 Svamp-1
 Gurka-20
 Kat-100
-Svamp-1
 apelsin-4
 sak-7
 sak-8

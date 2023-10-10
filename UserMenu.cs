@@ -21,7 +21,7 @@ public class UserMenu
                 Console.WriteLine("Genomförda beställningar och kvitton");
                 break;
             case "e":
-                register.LoginUser();
+                //register.LoginUser();
                 break;
         }
     }
