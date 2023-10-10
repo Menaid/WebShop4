@@ -1,14 +1,10 @@
-<<<<<<< HEAD
 ﻿namespace WebShop4;
-=======
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace WebShop4;
->>>>>>> loginCheck
 
 public class register
 {
@@ -20,13 +16,12 @@ public class register
         PassWord = password;
     }
 
-<<<<<<< HEAD
     public static void Login()
     {
         Console.WriteLine("Ange ditt användarnamn: ");
         string Usname = Console.ReadLine();
         Console.WriteLine("Ange ditt Lösenord: ");
-=======
+    }
 
     public static void startCustom()
     {
@@ -49,13 +44,12 @@ public class register
         }
     }
 
-
     public static void LoginUser()
     {
         Console.WriteLine("Skriv användarnamn: ");
         string Usname = Console.ReadLine();
         Console.WriteLine("Skriv Lösenord: ");
->>>>>>> loginCheck
+
         string Paword = Console.ReadLine();
         string[] lines = File.ReadAllLines(@"../../../customers.txt");
         List<string> newwords = new List<string>();
@@ -64,42 +58,20 @@ public class register
             newwords = new List<string>(item.Split("-"));
             if (Usname == newwords[0] && Paword == newwords[1])
             {
-<<<<<<< HEAD
+
                 Console.WriteLine("Välkommen tillbaka!");
-=======
+
                 Console.WriteLine("Correct");
->>>>>>> loginCheck
+
                 break;
             }
         }
         if (Usname != newwords[0] || Paword != newwords[1])
         {
-<<<<<<< HEAD
+
             Console.WriteLine("Fel, försök igen.");
         }
     }
-    public static void reg()
-    {
-        Console.WriteLine("Vänligen ange ett användarnamn: ");
-        string Uname = Console.ReadLine();
-        Console.WriteLine("Vänligen ange ett lösenord: ");
-=======
-            Console.WriteLine("Not Correct");
-            Console.WriteLine("| T = Try again | E = Exit |");
-            string A = Console.ReadLine();
-
-            switch (A.ToString().ToLower())
-            {
-                case "t":
-                    register.LoginUser();
-                    break;
-                case "e":
-                    register.startCustom();
-                    break;
-            }
-        }
-    }
-
 
     public static void LoginAdmin()
     {
@@ -121,7 +93,7 @@ public class register
                 switch (A.ToString().ToLower())
                 {
                     case "c":
-                        ForAdmin.CustomerInfo();
+                        //NewAdmin.CustomerInfo();
                         break;
                     case "e":
                         register.startCustom();
@@ -136,13 +108,11 @@ public class register
         }
     }
 
-
     public static void reg()
     {
         Console.WriteLine("Skriv användarnamn: ");
         string Uname = Console.ReadLine();
         Console.WriteLine("Skriv Lösenord: ");
->>>>>>> loginCheck
         string Pword = Console.ReadLine();
 
         customer custom = new customer(username: Uname, password: Pword);
@@ -152,8 +122,5 @@ public class register
         string loca = @"../../../customers.txt";
         File.AppendAllText(loca, UP + Environment.NewLine);
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> loginCheck
 }

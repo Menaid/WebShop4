@@ -1,18 +1,16 @@
-<<<<<<< HEAD:ForAdmin.cs
-=======
-ï»¿namespace WebShop4;
+namespace WebShop4;
 
 public class NewAdmin
 {
     public static void EditItemList()
     {
-        Console.WriteLine("\nLÃ¤gg till produkt = L\nTa bort produkt = T\nExit = E\n");
+        Console.WriteLine("\nLägg till produkt = L\nTa bort produkt = T\nExit = E\n");
         string A = Console.ReadLine(); //admin svar
 
-        string[] lines = File.ReadAllLines("../../../produktlista.txt");//gÃ¶r en array av fil
+        string[] lines = File.ReadAllLines("../../../produktlista.txt");//gör en array av fil
         List<string> product = new List<string>();
 
-        switch (A.ToString().ToLower())//gÃ¶r en switch dÃ¤r admin svar gÃ¶rs till string med smÃ¥ bokstÃ¤ver
+        switch (A.ToString().ToLower())//gör en switch där admin svar görs till string med små bokstäver
         {
             case "t":
                 Console.WriteLine("\nVad ska tas bort?\n");
@@ -44,8 +42,8 @@ public class NewAdmin
                 break;
 
             case "l":
-                Console.WriteLine("Vad ska lÃ¤ggas till?");
-                Console.WriteLine("Namn pÃ¥ produkt: ");
+                Console.WriteLine("Vad ska läggas till?");
+                Console.WriteLine("Namn på produkt: ");
                 string iName = Console.ReadLine();
                 Console.WriteLine("Produktpris: ");
                 string iCost = Console.ReadLine();
@@ -64,4 +62,3 @@ public class NewAdmin
 }
 
 
->>>>>>> loginCheck:NewAdmin.cs

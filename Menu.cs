@@ -14,7 +14,6 @@
             bool run = true;
             while (run)
             {
-
                 switch (userInput)
                 {
                     case "l":
@@ -66,7 +65,7 @@
                         run = false;
                         break;
                     case "3":
-                        ForAdmin.CustomerInfo();
+                        //NewAdmin.CustomerInfo();
                         run = false;
                         break;
                     case "4":
@@ -86,7 +85,6 @@
             }
 
         }
-
 
         public static void UserMenu()
         {
