@@ -30,8 +30,6 @@ public class ForAdmin
 
         var AdminChoice = customers[b];
 
-
-
         customs = new List<string>(AdminChoice.Split("-"));
         Console.WriteLine("Vill du ändra namn eller lösen");
         Console.WriteLine("Namn = 1 | Lösen = 2");
