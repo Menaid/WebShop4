@@ -102,7 +102,9 @@ public class ForAdmin
                     if (product[i] == product[NewRemove])
                     {                     
                         product.Remove(product[i]);
-                        File.WriteAllLines("../../../produktlista.txt", product);  
+                        File.WriteAllLines("../../../produktlista.txt", product);
+                        Console.Clear();
+                        EditItemList();
                     }
                 }
                 break;
