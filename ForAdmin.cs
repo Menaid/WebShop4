@@ -1,5 +1,4 @@
-
-﻿namespace WebShop4;
+namespace WebShop4;
 
 public class ForAdmin
 {
@@ -12,9 +11,9 @@ public class ForAdmin
     public static void CustomerInfo()
     {
 
-        string[] customers = File.ReadAllLines("../../../admins.txt");
+        string[] customers = File.ReadAllLines("../../../customers.txt");
         string[] temp = File.ReadAllLines("../../../tempfile.txt");
-        
+
         List<string> customs = new List<string>();
         var count = customs.Count();
 
@@ -28,41 +27,42 @@ public class ForAdmin
         var a = Console.ReadLine();
         int b = int.Parse(a);
         b -= 1;
+
         var AdminChoice = customers[b];
 
-        if (AdminChoice == customers[b])
+
+
+        customs = new List<string>(AdminChoice.Split("-"));
+        Console.WriteLine("Vill du ändra namn eller lösen");
+        Console.WriteLine("Namn = 1 | Lösen = 2");
+        Console.WriteLine(" ");
+        var read = Console.ReadLine();
+
+        switch (read)
         {
-            customs = new List<string>(AdminChoice.Split("-"));
-            Console.WriteLine("Vill du ändra namn eller lösen");
-            Console.WriteLine("Namn = 1 | Lösen = 2");
-            Console.WriteLine(" ");
-            var read = Console.ReadLine();
+            case "1":
+                Console.WriteLine("Vad ska ditt nya namn vara?: ");
+                var NewName = Console.ReadLine();
+                customs[0] = NewName;
+                string tem = @"../../../tempfile.txt";
+                string tempo = @"../../../customers.txt";
 
-            switch (read)
-            {
-                case "1":
-                    Console.WriteLine("Vad ska ditt nya namn vara?: ");
-                    var NewName = Console.ReadLine();
-                    customs[0] = NewName;
-                    string tem = @"../../../tempfile.txt";
-                    string tempo = @"../../../customers.txt";
-                    File.AppendAllText(tem, NewName + "-" + customs[1] + Environment.NewLine);
-                    
-                    break;
-                case "2":
 
-                    Console.WriteLine("Vad ska ditt nya lösenord vara?: ");
+                break;
+            case "2":
 
-                    Console.WriteLine("Vad för lösen?: ");
+                Console.WriteLine("Vad ska ditt nya lösenord vara?: ");
 
-                    var NewPass = Console.ReadLine();
-                    customs[1] = NewPass;
-                    
-                    break;
+                Console.WriteLine("Vad för lösen?: ");
 
-            }
+                var NewPass = Console.ReadLine();
+                customs[1] = NewPass;
+
+                break;
         }
+        customers[b] = customs[0] + "-" + customs[1];
 
+        File.WriteAllLines("../../../customers.txt", customers);
 
     }
 
