@@ -52,9 +52,7 @@ public class ForAdmin
                 break;
         }
         customers[b] = customs[0] + "-" + customs[1];
-
         File.WriteAllLines("../../../customers.txt", customers);
-
     }
 
 

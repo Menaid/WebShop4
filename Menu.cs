@@ -18,15 +18,15 @@
                 switch (userInput)
                 {
                     case "l":
-                        UserLogin.Login();
+                       
                         run = false;
                         break;
                     case "r":
-                        Register.RegisterNewUser();
+                        
                         run = false;
                         break;
                     case "a":
-                        AdminLogin.AdminUser();
+                        
                         AdminChoice();
                         run = false;
                         break;
