@@ -40,7 +40,6 @@ public class NewAdmin
             Console.Clear();
             adm.AdminChoice();
         }
-        
     }
 
     public static void addItem()
