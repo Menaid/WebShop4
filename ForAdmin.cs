@@ -12,8 +12,7 @@ public class ForAdmin
     {
 
         string[] customers = File.ReadAllLines("../../../customers.txt");
-        string[] temp = File.ReadAllLines("../../../tempfile.txt");
-
+    
         List<string> customs = new List<string>();
         var count = customs.Count();
 
@@ -41,17 +40,11 @@ public class ForAdmin
             case "1":
                 Console.WriteLine("Vad ska ditt nya namn vara?: ");
                 var NewName = Console.ReadLine();
-                customs[0] = NewName;
-               
-                string tempo = @"../../../customers.txt";
-
-
+                customs[0] = NewName;               
                 break;
             case "2":
 
                 Console.WriteLine("Vad ska ditt nya lösenord vara?: ");
-
-                Console.WriteLine("Vad för lösen?: ");
 
                 var NewPass = Console.ReadLine();
                 customs[1] = NewPass;
