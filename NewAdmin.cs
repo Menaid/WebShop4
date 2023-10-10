@@ -31,14 +31,14 @@ public class NewAdmin
                     product.Remove(product[i]);
                     File.WriteAllLines("../../../produktlista.txt", product);
                     Console.Clear();
-                    adm.AdminChoice();
+                    Adm.AdminChoice();
                 }
             }
         }
         else
         {
             Console.Clear();
-            adm.AdminChoice();
+            Adm.AdminChoice();
         }
     }
 
@@ -53,14 +53,14 @@ public class NewAdmin
         if (iName == "" || iCost == "")
         {
             Console.Clear();
-            adm.AdminChoice();
+            Adm.AdminChoice();
         }
 
         string NC = iName + "-" + iCost;
         string loca = @"../../../produktlista.txt";
         File.AppendAllText(loca, NC + Environment.NewLine);
         Console.Clear();
-        adm.AdminChoice();
+        Adm.AdminChoice();
     }
 
     public static void CustomerInfo()
@@ -104,7 +104,7 @@ public class NewAdmin
         customers[b] = customs[0] + "-" + customs[1];
         File.WriteAllLines("../../../customers.txt", customers);
         Console.Clear();
-        adm.AdminChoice();
+        Adm.AdminChoice();
     }
 }
 

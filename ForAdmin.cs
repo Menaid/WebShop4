@@ -28,21 +28,22 @@ public class ForAdmin
         b -= 1;
 
         var AdminChoice = customers[b];
-
+        
         customs = new List<string>(AdminChoice.Split("-"));
         Console.WriteLine("Vill du ändra namn eller lösen");
         Console.WriteLine("Namn = 1 | Lösen = 2");
         Console.WriteLine(" ");
         var read = Console.ReadLine();
 
+        
         switch (read)
-        {
+        { 
             customs = new List<string>(AdminChoice.Split("-"));
             Console.WriteLine("Vill du ändra namn eller lösen");
             Console.WriteLine("Namn = 1 | Lösen = 2");
             Console.WriteLine(" ");
             var readN = Console.ReadLine();
-            
+        
 
         switch (read)
         {
@@ -62,6 +63,7 @@ public class ForAdmin
                 break;
 
         }
+        
 
             case "1":
             Console.WriteLine("Vad ska ditt nya namn vara?: ");
@@ -77,6 +79,7 @@ public class ForAdmin
 
             break;
         }
+        
         customers[b] = customs[0] + "-" + customs[1];
 
         File.WriteAllLines("../../../customers.txt", customers);

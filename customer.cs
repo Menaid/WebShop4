@@ -1,6 +1,6 @@
 ﻿namespace WebShop4;
 
-public class customer : register
+public class customer : Register
 {
     public customer(string username, string password) : base(username, password)
     {

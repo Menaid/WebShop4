@@ -12,8 +12,11 @@ public class Adm
         Console.WriteLine("Vad vill du göra? ");
         Console.WriteLine("Välj ett av följande alternativ. ");
         Console.WriteLine("1. Lägga till en produkt i sortimentet");
+        Console.WriteLine("---------------------------------------");
         Console.WriteLine("2. Tabort en produkt i sortimentet");
+        Console.WriteLine("---------------------------------------");
         Console.WriteLine("3. Visa och redigera kundinfo");
+        Console.WriteLine("---------------------------------------");
         Console.WriteLine("4. Visa transaktioner");
         adminChoice = Console.ReadLine();
 

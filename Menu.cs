@@ -5,8 +5,11 @@ internal class Menu
     public static void MenuChoice()
     {
         Console.WriteLine("Hej och välkommen till WebShop 4");
+        Console.WriteLine("--------------------------------------------------------------------------");
         Console.WriteLine("Vänligen ange om du vill logga in eller registrera dig som ny användare.");
+        Console.WriteLine("--------------------------------------------------------------------------");
         Console.WriteLine("För att logga in som befintlig användare ange | L | för att registrera dig som ny ange | R |");
+        Console.WriteLine("--------------------------------------------------------------------------");
         Console.WriteLine("Är du admin och vill logga in som admin ange | A |");
 
         string? userInput = Console.ReadLine().ToLower();
