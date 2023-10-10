@@ -66,13 +66,7 @@
                         run = false;
                         break;
                     case "3":
-
-                        Console.WriteLine("Vill du redigera kundinfo?");
-                        string input = Console.ReadLine().ToLower();
-                        if (input == "ja")
-                        {
-                            ForAdmin.CustomerInfo();
-                        }
+                        ForAdmin.CustomerInfo();
                         run = false;
                         break;
                     case "4":

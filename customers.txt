@@ -3,6 +3,6 @@ Lukas-lösenord
 pekka-lösen
 Lukas-Austrell
 y-h
-lukke-hej
+lukke-password
 Menaid-kaka
 Kalle-Knut
