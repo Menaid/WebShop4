@@ -16,13 +16,6 @@ public class register
         PassWord = password;
     }
 
-    public static void Login()
-    {
-        Console.WriteLine("Ange ditt användarnamn: ");
-        string Usname = Console.ReadLine();
-        Console.WriteLine("Ange ditt Lösenord: ");
-    }
-
     public static void startCustom()
     {
         Console.WriteLine("Do you want to register, log in as a customer or login as an admin?:");
@@ -48,10 +41,12 @@ public class register
     {
         Console.WriteLine("Skriv användarnamn: ");
         string Usname = Console.ReadLine();
-        Console.WriteLine("Skriv Lösenord: ");
 
+        Console.WriteLine("Skriv Lösenord: ");
         string Paword = Console.ReadLine();
+
         string[] lines = File.ReadAllLines(@"../../../customers.txt");
+
         List<string> newwords = new List<string>();
         foreach (var item in lines)
         {
@@ -77,9 +72,12 @@ public class register
     {
         Console.WriteLine("Skriv användarnamn: ");
         string Usname = Console.ReadLine();
+
         Console.WriteLine("Skriv Lösenord: ");
         string Paword = Console.ReadLine();
+
         string[] lines = File.ReadAllLines(@"../../../admins.txt");
+
         List<string> newwords = new List<string>();
         foreach (var item in lines)
         {

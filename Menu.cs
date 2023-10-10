@@ -17,7 +17,7 @@
                 switch (userInput)
                 {
                     case "l":
-                        register.Login();
+                        register.LoginUser();
                         run = false;
                         break;
                     case "r":
@@ -56,7 +56,6 @@
                 {
                     case "1":
 
-                        AdminChoice();
                         run = false;
                         break;
                     case "2":
