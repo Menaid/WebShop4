@@ -7,13 +7,24 @@ namespace WebShop4
         public int Quantity;
         public int Price;
 
-        static void ProductList()
+        public static void ProductList()
         {
             string[] ItemsInCollection = File.ReadAllLines("../../../produktlista.txt");
 
             foreach (var item in ItemsInCollection)
             {
                 Console.WriteLine(item);
+            }
+            Console.WriteLine("Vill du lägga till någon produkt till din varukorg? \n eller vill du gå tillbaka till menyn? \n J för att lägga till | N för att gå tillbaka till menyn");
+            string? DoOrDoNot = Console.ReadLine().ToLower();
+
+            if (DoOrDoNot == "ja")
+            {
+
+            }
+            else
+            {
+                Menu.UserMenu();
             }
         }
     }

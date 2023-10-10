@@ -3,12 +3,19 @@ namespace WebShop4
 {
     public class ShoppingCart
     {
-        public static void EmptyCart()
+        public static void Cart()
         {
             List<Products> Cart = new List<Products>();
             if (Cart == null)
             {
                 Console.WriteLine("Din varukorg är just nu tom.");
+                Console.WriteLine("Vill du gå till produktlistan eller gå tillbaka till menyn?");
+                Console.WriteLine("P för produktlista | M för meny");
+                string? choice = Console.ReadLine().ToLower();
+                if (choice == "p")
+                {
+
+                }
             }
             else
             {
@@ -19,8 +26,8 @@ namespace WebShop4
                 }
                 Console.WriteLine("Vill du ta bort något från din varukorg?");
                 Console.WriteLine("Ja för att ta bort | Nej för att gå tillbaka till menyn");
-                string? taBort = Console.ReadLine().ToLower();
-                if (taBort == "Ja")
+                string? remove = Console.ReadLine().ToLower();
+                if (remove == "Ja")
                 {
                     RemoveFromCart();
                 }

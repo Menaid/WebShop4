@@ -103,7 +103,8 @@
                     Console.WriteLine("Se din varukorg");
                     break;
                 case "p":
-                    Console.WriteLine("Produktlista");
+                    Products.ProductList();
+
                     break;
                 case "g":
                     Console.WriteLine("Genomförda beställningar och kvitton");
