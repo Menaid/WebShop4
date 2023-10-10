@@ -94,32 +94,14 @@ public class ForAdmin
         {
             case "t":
                 Console.WriteLine("\nVad ska tas bort?\n");
-                foreach(string item in lines)
+                for (int i = 0; i < lines.Count(); i++)
                 {
-                    Console.WriteLine(item);
-                }//visar hela produktlistan
-                Console.WriteLine("\nNamn på produkt: ");
-                string pName = Console.ReadLine();
-
-                for (int i = 0; i < lines.Length; i++)
-                {
-                    string[] fields = lines[i].Split("-");
-                    if(pName == fields[0])
-                    {
-                        //lines.Remove(fields[0], fields[1]);
-                    }
+                    var a = i + 1;
+                    Console.WriteLine(a +". "+ lines[i]);
                 }
-
-                
-                //int b = int.Parse(pName);//string pName to int pName, to variable b
-                //b --;// b-1 pga list index börjar på 0
-                //var pChoice = lines[b]; //ny variabel som är lika med lista av användare[platsnummer val]
-
-                //if (pChoice == lines[b])
-                //{
-                //    string produktlista = @"../../../produktlista.txt";
-                //    //File.AppendAllText(produktlista,  );
-                //}
+                Console.WriteLine("Vilken ta bort?: ");
+                string remove = Console.ReadLine();
+                int NewRemove = remove(); 
                 break;
 
             case "l":
