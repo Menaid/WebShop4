@@ -66,13 +66,7 @@
                         run = false;
                         break;
                     case "3":
-
-                        Console.WriteLine("Vill du redigera kundinfo?");
-                        string input = Console.ReadLine().ToLower();
-                        if (input == "ja")
-                        {
-                            ForAdmin.CustomerInfo();
-                        }
+                        ForAdmin.CustomerInfo();
                         run = false;
                         break;
                     case "4":
@@ -93,9 +87,30 @@
 
         }
 
-        public static void UserChoice()
-        {
 
+        public static void UserMenu()
+        {
+            Console.WriteLine("Menu:");
+            Console.Write("Varukorg = V\nProduktlista = P\nGenomförda beställningar och se kvitton = G\nExit = E");
+            Console.WriteLine(" ");
+            string A = Console.ReadLine();
+
+            switch (A.ToString().ToLower())
+            {
+                case "v":
+                    Console.WriteLine("Varukorg");
+                    break;
+                case "p":
+                    Console.WriteLine("Produktlista");
+                    break;
+                case "g":
+                    Console.WriteLine("Genomförda beställningar och kvitton");
+                    break;
+                case "e":
+                    UserMenu();
+                    break;
+            }
         }
+
     }
 }
