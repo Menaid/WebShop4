@@ -3,9 +3,20 @@ namespace WebShop4
 {
     public class Products
     {
-        public string? ProductName { get; set; }
-        public int Quantity { get; set; }
-        public int Price { get; set; }
+        public string? ProductName;
+        public int Quantity;
+        public int Price;
+
+        static void ProductList()
+        {
+            List<string> Items = new List<string>();
+            string[] ItemsInCollection = File.ReadAllLines("../../../produktlista.txt");
+
+            foreach (var item in ItemsInCollection)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }
 

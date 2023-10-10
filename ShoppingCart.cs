@@ -17,6 +17,17 @@ namespace WebShop4
                 {
                     Console.WriteLine(item);
                 }
+                Console.WriteLine("Vill du ta bort något från din varukorg?");
+                Console.WriteLine("Ja för att ta bort | Nej för att gå tillbaka till menyn");
+                string? taBort = Console.ReadLine().ToLower();
+                if (taBort == "Ja")
+                {
+                    RemoveFromCart();
+                }
+                else
+                {
+                    Menu.UserMenu();
+                }
             }
         }
 

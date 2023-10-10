@@ -64,15 +64,13 @@ public class ForAdmin
             case "2":
 
                 Console.WriteLine("Vad ska ditt nya lösenord vara?: ");
-
                 var NewPass = Console.ReadLine();
                 customs[1] = NewPass;
-
                 break;
         }
         customers[b] = customs[0] + "-" + customs[1];
-
         File.WriteAllLines("../../../customers.txt", customers);
+        Menu.AdminChoice();
 
     }
 

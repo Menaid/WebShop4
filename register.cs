@@ -24,12 +24,22 @@ public class register
             if (Usname == newwords[0] && Paword == newwords[1])
             {
                 Console.WriteLine("Välkommen tillbaka!");
+                Menu.UserMenu();
                 break;
             }
         }
         if (Usname != newwords[0] || Paword != newwords[1])
         {
-            Console.WriteLine("Fel, försök igen.");
+            Console.WriteLine("Vill du försöka igen? Ja/Nej");
+            string? tryAgain = Console.ReadLine().ToLower();
+            if (tryAgain == "ja")
+            {
+                Login();
+            }
+            else
+            {
+                Menu.MenuChoice();
+            }
         }
     }
     public static void reg()
