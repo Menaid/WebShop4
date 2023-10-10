@@ -10,23 +10,6 @@ public class register
         PassWord = password;
     }
 
-    public static void startCustom()
-    {
-        Console.WriteLine("Vill du registrera dig som en ny användare eller logga in som en befintlig?:");
-        Console.Write("| L = Login | R = Register | ");
-        Console.WriteLine(" ");
-        string A = Console.ReadLine();
-
-        switch (A.ToString().ToLower())
-        {
-            case "l":
-                register.Login();
-                break;
-            case "r":
-                register.reg();
-                break;
-        }
-    }
     public static void Login()
     {
         Console.WriteLine("Ange ditt användarnamn: ");

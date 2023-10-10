@@ -1,8 +1,7 @@
 using WebShop4;
 
-register.startCustom();
+Menu.MenuChoice();
 
-ForAdmin.CustomerInfo();
 
 
 //register.startCustom();
