@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 lukas-l�sen
 Meno-1
 Pelle-kaka
+=======
+irina-lösen
+>>>>>>> loginCheck

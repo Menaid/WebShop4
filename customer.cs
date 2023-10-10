@@ -7,4 +7,8 @@ public class customer : register
     {
 
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> loginCheck
