@@ -9,8 +9,6 @@ public class ForAdmin
                 
         string[] lines = File.ReadAllLines("../../../produktlista.txt");//gör en array av fil
         List<string> product = new List<string>();
-        
-        bool deleted = false;
 
         switch (A.ToString().ToLower())//gör en switch där admin svar görs till string med små bokstäver
         {
@@ -26,7 +24,7 @@ public class ForAdmin
                     product.Add(item);
                 }
 
-                Console.WriteLine("Vilken ta bort?: ");
+                Console.WriteLine("Vilken vill du ta bort?: ");
                 string remove = Console.ReadLine();
                 int c = int.Parse(remove);
                 int NewRemove = c - 1;
@@ -40,18 +38,16 @@ public class ForAdmin
                         EditItemList();
                     }
                 }
+
                 break;
 
             case "l":
                 Console.WriteLine("Vad ska läggas till?");
-                
                 Console.WriteLine("Namn på produkt: ");
                 string iName = Console.ReadLine();
                 Console.WriteLine("Produktpris: ");
                 string iCost = Console.ReadLine();
-
                 string NC = iName + "-" + iCost;
-
                 string loca = @"../../../produktlista.txt";
                 File.AppendAllText(loca, NC + "\n");
                 Console.Clear();
