@@ -1,6 +1,3 @@
-﻿using System.Net.WebSockets;
-using System.Runtime.InteropServices.Marshalling;
-
 namespace WebShop4;
 
 public class ForAdmin
@@ -14,7 +11,8 @@ public class ForAdmin
     public static void CustomerInfo()
     {
 
-        string[] customers = File.ReadAllLines("../../../admins.txt");
+        string[] customers = File.ReadAllLines("../../../customers.txt");
+    
         List<string> customs = new List<string>();
         var count = customs.Count();
 
@@ -23,14 +21,23 @@ public class ForAdmin
             var viewCustomers = customers[i];
             Console.WriteLine((i + 1) + ". " + viewCustomers);
         }
+        Console.WriteLine("Vilken användare vill du ändra på?");  // La till lite förtydligande där man blir tillfrågad om vem man vill redigera på.
 
         var a = Console.ReadLine();
         int b = int.Parse(a);
         b -= 1;
+
         var AdminChoice = customers[b];
 
-        if (AdminChoice == customers[b])
+        customs = new List<string>(AdminChoice.Split("-"));
+        Console.WriteLine("Vill du ändra namn eller lösen");
+        Console.WriteLine("Namn = 1 | Lösen = 2");
+        Console.WriteLine(" ");
+        var read = Console.ReadLine();
+
+        switch (read)
         {
+<<<<<<< HEAD
             customs = new List<string>(AdminChoice.Split("-"));
             Console.WriteLine("Vill du ändra namn eller lösen");
             Console.WriteLine("Namn = 1 | Lösen = 2");
@@ -55,10 +62,31 @@ public class ForAdmin
                     break;
                 
             }
+=======
+            case "1":
+                Console.WriteLine("Vad ska ditt nya namn vara?: ");
+                var NewName = Console.ReadLine();
+                customs[0] = NewName;               
+                break;
+            case "2":
+
+                Console.WriteLine("Vad ska ditt nya lösenord vara?: ");
+
+                var NewPass = Console.ReadLine();
+                customs[1] = NewPass;
+
+                break;
+>>>>>>> c58d1e36b34ec69777fcf8beed17dd49d6293291
         }
-        
+        customers[b] = customs[0] + "-" + customs[1];
+
+        File.WriteAllLines("../../../customers.txt", customers);
 
     }
+
+
+    //string[] arr = customs.ToArray();
+    //customers = arr;
 
     //public string ProductList()
     //{
