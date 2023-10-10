@@ -1,22 +1,16 @@
-<<<<<<< HEAD
-﻿namespace WebShop4;
-=======
+
 namespace WebShop4;
->>>>>>> testgren
+
 
 public class ForAdmin
 {
-    bool editCustomerInfo = true;
-    bool editeProductList = true;
-    bool Oversight = true;
 
     // string[] products = File.ReadAllLines(".....txt");
     // string[] oversight = File.ReadAllLines("....txt");
     public static void CustomerInfo()
     {
 
-<<<<<<< HEAD
-        string[] customers = File.ReadAllLines("../../../admins.txt");
+        string[] customers = File.ReadAllLines("../../../customers.txt");
         List<string> customs = new List<string>();
         var count = customs.Count();
         foreach (var item in customers)
@@ -38,13 +32,8 @@ public class ForAdmin
         {
             Console.WriteLine(item);
         }
-=======
-        string[] customers = File.ReadAllLines("../../../customers.txt");
-    
-        List<string> customs = new List<string>();
-        var count = customs.Count();
->>>>>>> testgren
 
+        customers = File.ReadAllLines("../../../customers.txt");
 
         for (int i = 0; i < customers.Length; i++)
         {
@@ -70,7 +59,7 @@ public class ForAdmin
             case "1":
                 Console.WriteLine("Vad ska ditt nya namn vara?: ");
                 var NewName = Console.ReadLine();
-                customs[0] = NewName;               
+                customs[0] = NewName;
                 break;
             case "2":
 
