@@ -1,12 +1,12 @@
 ﻿namespace WebShop4;
 
-public class ForAdmin
+public class NewAdmin
 {
     public static void EditItemList()
     {
         Console.WriteLine("\nLägg till produkt = L\nTa bort produkt = T\nExit = E\n");
         string A = Console.ReadLine(); //admin svar
-                
+
         string[] lines = File.ReadAllLines("../../../produktlista.txt");//gör en array av fil
         List<string> product = new List<string>();
 
@@ -17,7 +17,7 @@ public class ForAdmin
                 for (int i = 0; i < lines.Count(); i++)
                 {
                     var a = i + 1;
-                    Console.WriteLine(a +". "+ lines[i]);
+                    Console.WriteLine(a + ". " + lines[i]);
                 }
                 foreach (string item in lines)
                 {
@@ -31,7 +31,7 @@ public class ForAdmin
                 for (int i = 0; i < product.Count(); i++)
                 {
                     if (product[i] == product[NewRemove])
-                    {                     
+                    {
                         product.Remove(product[i]);
                         File.WriteAllLines("../../../produktlista.txt", product);
                         Console.Clear();
