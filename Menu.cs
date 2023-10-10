@@ -22,11 +22,9 @@
                         break;
                     case "r":
                         register.reg();
-                        run = false;
                         break;
                     case "a":
                         AdminChoice();
-                        run = false;
                         break;
 
                 }
@@ -55,34 +53,25 @@
                 switch (adminChoice)
                 {
                     case "1":
-
-                        run = false;
+                        NewAdmin.addItem();                    
                         break;
                     case "2":
-
-                        AdminChoice();
-                        run = false;
+                        NewAdmin.remItem();                        
                         break;
                     case "3":
-                        //NewAdmin.CustomerInfo();
-                        run = false;
+                        NewAdmin.CustomerInfo();
                         break;
                     case "4":
-                        AdminChoice();
-                        run = false;
+                        Console.WriteLine("Hej");
                         break;
                     case "5":
                         Console.WriteLine("Du loggas nu ut.");
                         MenuChoice();
-                        run = false;
                         break;
                     default:
                         break;
-
                 }
-
             }
-
         }
 
         public static void UserMenu()

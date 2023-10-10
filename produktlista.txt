@@ -1,5 +1,4 @@
 Gurka-20
-<<<<<<< HEAD
 Kat-100
 Svamp-1
 Gurka-20
@@ -8,10 +7,8 @@ apelsin-4
 sak-7
 sak-8
 Melon-40
-
-=======
 Katt-100
 Svamp-1
 Rymdraket-999
 Dörr-599
->>>>>>> 1f5bc60448a30232ddf9a52e8f3e8386d4ff4cfc
+
