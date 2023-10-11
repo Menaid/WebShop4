@@ -1,15 +1,11 @@
+using System.Runtime.Intrinsics.Arm;
 
 namespace WebShop4;
 
-
 public class ForAdmin
 {
-
-    // string[] products = File.ReadAllLines(".....txt");
-    // string[] oversight = File.ReadAllLines("....txt");
     public static void CustomerInfo()
     {
-
         string[] customers = File.ReadAllLines("../../../customers.txt");
         List<string> customs = new List<string>();
         var count = customs.Count();
@@ -20,29 +16,22 @@ public class ForAdmin
             customs = new List<string>(item.Split("-"));
         }
 
-
-        for (int i = 0; i < customers.Length; i++)
-        {
-            var viewCustomers = customers[i];
-            Console.WriteLine((i + 1) + ". " + viewCustomers);
-        }
-        Console.WriteLine("Vilken användare vill du redigera?");
-
-        foreach (var item in customs)
-        {
-            Console.WriteLine(item);
-        }
-
         customers = File.ReadAllLines("../../../customers.txt");
-
+        Console.Clear();
         for (int i = 0; i < customers.Length; i++)
         {
             var viewCustomers = customers[i];
             Console.WriteLine((i + 1) + ". " + viewCustomers);
         }
-        Console.WriteLine("Vilken användare vill du ändra på?");  // La till lite förtydligande där man blir tillfrågad om vem man vill redigera på.
+        
+        Console.WriteLine("Vilken användare vill du ändra på?: ");  // La till lite förtydligande där man blir tillfrågad om vem man vill redigera på.
 
         var a = Console.ReadLine();
+        if (a == "")
+        {
+            Console.Clear();
+            Menu.AdminChoice();
+        }
         int b = int.Parse(a);
         b -= 1;
 
@@ -62,7 +51,6 @@ public class ForAdmin
                 customs[0] = NewName;
                 break;
             case "2":
-
                 Console.WriteLine("Vad ska ditt nya lösenord vara?: ");
                 var NewPass = Console.ReadLine();
                 customs[1] = NewPass;
@@ -70,22 +58,69 @@ public class ForAdmin
         }
         customers[b] = customs[0] + "-" + customs[1];
         File.WriteAllLines("../../../customers.txt", customers);
+        Console.Clear();
         Menu.AdminChoice();
 
     }
 
+    public static void remItem()
+    {
+        string[] lines = File.ReadAllLines(@"../../../produktlista.txt");//gör en array av fil
+        List<string> product = new List<string>();
 
-    //string[] arr = customs.ToArray();
-    //customers = arr;
+        Console.WriteLine("\nVad ska tas bort?\n");
+        for (int i = 0; i < lines.Count(); i++)
+        {
+            var a = i + 1;
+            Console.WriteLine(a + ". " + lines[i]);
+        }
+        foreach (string item in lines)
+        {
+            product.Add(item);
+        }
 
-    //public string ProductList()
-    //{
+        Console.WriteLine("Vilken vill du ta bort?: ");
+        string remove = Console.ReadLine();
+        if (remove != "")
+        {
+            int c = int.Parse(remove);
+            int NewRemove = c - 1;
+            for (int i = 0; i < product.Count(); i++)
+            {
+                if (product[i] == product[NewRemove])
+                {
+                    product.Remove(product[i]);
+                    File.WriteAllLines("../../../produktlista.txt", product);
+                    Console.Clear();
+                    Menu.AdminChoice();
+                }
+            }
+        }
+        else
+        {
+            Console.Clear();
+            Menu.AdminChoice();
+        }
+    }
 
-    //}
+    public static void addItem()
+    {
+        Console.WriteLine("Vad ska läggas till?");
+        Console.WriteLine("Namn på produkt: ");
+        string iName = Console.ReadLine();
+        Console.WriteLine("Produktpris: ");
+        string iCost = Console.ReadLine();
 
-    //public string Oversight()
-    //{
+        if (iName == "" || iCost == "")
+        {
+            Console.Clear();
+            Menu.AdminChoice();
+        }
 
-    //}
-
+        string NC = iName + "-" + iCost;
+        string loca = @"../../../produktlista.txt";
+        File.AppendAllText(loca, NC + Environment.NewLine);
+        Console.Clear();
+        Menu.AdminChoice();
+    }
 }

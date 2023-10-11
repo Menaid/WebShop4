@@ -57,18 +57,15 @@
                 switch (adminChoice)
                 {
                     case "1":
-
-
+                        ForAdmin.addItem();
                         run = false;
                         break;
                     case "2":
-
-
+                        ForAdmin.remItem();
                         run = false;
                         break;
                     case "3":
                         ForAdmin.CustomerInfo();
-
                         run = false;
                         break;
                     case "4":
