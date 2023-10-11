@@ -1,10 +1,10 @@
-﻿
-namespace WebShop4
+﻿namespace WebShop4
 {
-    public class ShoppingCart
+    public class ForUsers
     {
         public static void Cart()
         {
+            string[] product = File.ReadAllLines("../../../produktlista.txt");
             List<Products> Cart = new List<Products>();
             if (Cart == null)
             {
@@ -14,6 +14,11 @@ namespace WebShop4
                 string? choice = Console.ReadLine().ToLower();
                 if (choice == "p")
                 {
+
+                    for (int i = 0; i < product.Length; i++)
+                    {
+                        Console.WriteLine($"Index {i}: {product[i]}");
+                    }
 
                 }
             }
