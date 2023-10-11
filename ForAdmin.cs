@@ -18,13 +18,16 @@ public class ForAdmin
 
         customers = File.ReadAllLines("../../../customers.txt");
         Console.Clear();
+        Console.WriteLine("Vilken användare vill du ändra på?: ");
+        Console.WriteLine("----------");
+        
         for (int i = 0; i < customers.Length; i++)
         {
             var viewCustomers = customers[i];
             Console.WriteLine((i + 1) + ". " + viewCustomers);
         }
-        
-        Console.WriteLine("Vilken användare vill du ändra på?: ");  // La till lite förtydligande där man blir tillfrågad om vem man vill redigera på.
+        Console.WriteLine("----------");
+        // La till lite förtydligande där man blir tillfrågad om vem man vill redigera på.
 
         var a = Console.ReadLine();
         if (a == "")
@@ -69,6 +72,7 @@ public class ForAdmin
         List<string> product = new List<string>();
 
         Console.WriteLine("\nVad ska tas bort?\n");
+        Console.WriteLine("----------");
         for (int i = 0; i < lines.Count(); i++)
         {
             var a = i + 1;
@@ -79,7 +83,7 @@ public class ForAdmin
             product.Add(item);
         }
 
-        Console.WriteLine("Vilken vill du ta bort?: ");
+        Console.WriteLine("----------");
         string remove = Console.ReadLine();
         if (remove != "")
         {
