@@ -50,12 +50,15 @@ public class register
         string Pword = Console.ReadLine();
 
         customer custom = new customer(username: Uname, password: Pword);
+        List<string> things = new List<string>();
 
         string UP = Uname + "-" + Pword;
 
         string loca = @"../../../customers.txt";
         File.AppendAllText(loca, UP + Environment.NewLine);
+        File.CreateText("../../../carts/"+Uname+"csv");
         Console.Clear();
         Menu.MenuChoice();
     }
+    
 }

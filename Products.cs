@@ -3,12 +3,18 @@ namespace WebShop4
 {
     public class Products
     {
+        public Products(string item)
+        {
+
+        }
+
         public string? ProductName;
         public int Quantity;
         public int Price;
-
+        
         public static void ProductList()
         {
+            
             string[] ItemsInCollection = File.ReadAllLines("../../../produktlista.txt");
             Console.Clear();
             Console.WriteLine("----------");
@@ -32,19 +38,15 @@ namespace WebShop4
                 Console.WriteLine("Vilken produkt vill du lägga till?: ");
                 int input = int.Parse(Console.ReadLine())-1;
                 string a = input.ToString();
-                List<string> things = new List<string>();
 
                 for (int i = 0; i < ItemsInCollection.Length; i++)
                 {
-                    if (ItemsInCollection[i] == a)
+                    if (input == i)
                     {
-                        things.Add(a);
-                        
+                        string loca = "../../../carts/" + username + ".csv";
+                        string[] data = new File.AppendAllText(loca, ItemsInCollection[i], Environment.NewLine);
                     }
-                }
-                foreach (string item in things)
-                {
-                    Console.WriteLine(item);
+                    
                 }
             }
             else
