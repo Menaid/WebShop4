@@ -56,7 +56,7 @@ public class register
 
         string loca = @"../../../customers.txt";
         File.AppendAllText(loca, UP + Environment.NewLine);
-        File.CreateText("../../../carts/"+Uname+"csv");
+        File.CreateText("../../../carts/"+Uname+".csv");
         Console.Clear();
         Menu.MenuChoice();
     }

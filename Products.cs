@@ -43,8 +43,10 @@ namespace WebShop4
                 {
                     if (input == i)
                     {
+                        string username = "username";
                         string loca = "../../../carts/" + username + ".csv";
-                        string[] data = new File.AppendAllText(loca, ItemsInCollection[i], Environment.NewLine);
+                        File.AppendAllText(loca, ItemsInCollection[i] + Environment.NewLine);
+
                     }
                     
                 }
