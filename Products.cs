@@ -15,18 +15,19 @@ namespace WebShop4
             {
                 Console.WriteLine(item);
             }
-            Console.WriteLine("Vill du lägga till någon produkt till din varukorg? \n eller vill du gå tillbaka till menyn? \n J för att lägga till | N för att gå tillbaka till menyn");
+            Console.WriteLine("Vill du lägga till någon produkt till din varukorg? \n eller vill du gå tillbaka till menyn? \n Ja för att lägga till | Nej för att gå tillbaka till menyn");
             string? DoOrDoNot = Console.ReadLine().ToLower();
 
             if (DoOrDoNot == "ja")
             {
-
+                ForAdmin.addItem();
             }
             else
             {
                 Menu.UserMenu();
             }
         }
+
     }
 }
 

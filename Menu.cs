@@ -98,10 +98,10 @@
             {
                 case "v":
                     Console.WriteLine("Se din varukorg");
+                    ShoppingCart.Cart();
                     break;
                 case "p":
                     Products.ProductList();
-
                     break;
                 case "g":
                     Console.WriteLine("Genomförda beställningar och kvitton");

@@ -14,7 +14,7 @@ namespace WebShop4
                 string? choice = Console.ReadLine().ToLower();
                 if (choice == "p")
                 {
-
+                    Products.ProductList();
                 }
             }
             else
