@@ -46,13 +46,13 @@ public class Products
         int amountItem = int.Parse(productInfo[2]);
         string local = "../../../products.csv";
 
-        if (amountItem == removeAmount)
+        for (int i = 0; i < lines.Length; i++)
         {
-            for (int i = 0; i < lines.Length; i++)
+            if (amountItem == removeAmount && lines[remove] == lines[i])
             {
-                lines[i].Remove(remove);
-                //productInfo.Remove(productInfo[remove]);
-                File.WriteAllLines(local, lines);
+                var erase = lines.ToList();
+                erase.RemoveAt(remove);
+                File.WriteAllLines(local, erase);
             }
         }
 
