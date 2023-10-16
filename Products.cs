@@ -63,6 +63,7 @@ public class Products
         {
 			// Använd remove at 
 			lines.RemoveByIndex(remove);
+			//lines = lines.ToList().RemoveAt(remove).ToArray();
         }
 		File.WriteAllLines(local, lines);
     }
