@@ -1,5 +1,4 @@
-﻿using System;
-namespace WebShop4;
+﻿namespace WebShop4;
 public class Customer
 {
     public string UserName { get; set; }
@@ -15,18 +14,17 @@ public class Customer
 
     public static void SignUp()
     {
-
+        string[] customer = File.ReadAllLines("../../../customer.csv");
         Console.WriteLine("Registrera dig som ny kund");
         Console.WriteLine("--------------------------");
         Console.WriteLine("Ange ditt namn: ");
         string name = Console.ReadLine();
         Console.Clear();
 
-        string[] customer = File.ReadAllLines("../../../customer.txt");
         if (customer.Contains(name))
         {
             Console.WriteLine("Det finns redan en användare med namnet " + name + " vänligen välj ett annat.");
-            return;
+            SignUp();
         }
 
         Console.WriteLine("Ange önskat lösenord: ");
@@ -34,7 +32,7 @@ public class Customer
         Console.WriteLine("Bekräfta lösenordet: ");
         string pw1 = Console.ReadLine();
 
-        while (pw != pw1 || pw == null)
+        while (pw != pw1 || string.IsNullOrWhiteSpace(pw))
         {
             Console.WriteLine("Du angav inte samma lösenord eller så lämnade du fältet tomt, försök igen");
         }
@@ -45,9 +43,9 @@ public class Customer
 
         Customer Costumer = new Customer(userName: name, userPw: pw, userId: GenerateUniqueId());
 
-        string newCustomer = name + "-" + pw;
-        string path = @"../../../customer.txt";
-        File.AppendAllText(path, newCustomer);
+        string newCustomer = name + " - " + pw + " - " + GenerateUniqueId();
+        string path = "../../../customer.csv";
+        File.AppendAllText(path, newCustomer + Environment.NewLine);
 
 
         static int GenerateUniqueId()

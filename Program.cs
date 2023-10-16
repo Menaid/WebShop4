@@ -1,7 +1,4 @@
-﻿using System;
-namespace WebShop4;
+﻿using WebShop4;
 
 
-
-
-
+Customer.SignUp();
