@@ -61,6 +61,7 @@ public class Products
                     }
         if (amountItem == 0)
         {
+			// Använd remove at 
 			lines.RemoveByIndex(remove);
         }
 		File.WriteAllLines(local, lines);
