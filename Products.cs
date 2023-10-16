@@ -3,34 +3,26 @@ namespace WebShop4;
 
 public class Products
 {
-    public static string[] lines = File.ReadAllLines("../../../products.csv");
-
+    public static string[] lines = File.ReadAllLines(productFile);
+    const string productFile = "../../../products.csv";
     public static void ShowItems()
     {
+
         for (int i = 0; i < lines.Length; i++)
         {
             Console.WriteLine(i + 1 + ": " + lines[i]);
         }
     }
-    /*
+
     public static void AddItems(string product, float price, int quantity)
     {
-        string? productName = product;
-        float cost = price;
-        int amount = quantity;
-        string newCost = cost.ToString();
-        string newAmount = amount.ToString();
+        string? item = product + "-" + price + "-" + quantity;
 
-        string? item = productName + "-" + newCost + "-" + newAmount;
-        Console.ReadKey();
-        string line = "../../../products.csv";
-        File.AppendAllText(line, item);
+        File.AppendAllText(productFile, item);
     }
-    */
 
     public static void RemoveItems()
     {
-        List<string> productInfo = new List<string>();
         ShowItems();
 
         Console.WriteLine("Vilken produkt vill du ta bort från sortimentet");
@@ -38,35 +30,24 @@ public class Products
         Console.WriteLine("Hur många vill du ta bort?");
         int removeAmount = int.Parse(Console.ReadLine());
 
-        for (int i = 0; i < lines.Length; i++)
-        {
-            productInfo = new List<string>(lines[remove].Split("-"));
-
-        }
+        var line = lines[remove];
+        var productInfo = line.Split("-");
 
         int amountItem = int.Parse(productInfo[2]);
-
-        string local = "../../../products.csv";
 
         if (amountItem > 1 && amountItem >= removeAmount)
         {
             amountItem -= removeAmount;
             productInfo[2] = amountItem.ToString();
             lines[remove] = productInfo[0] + "-" + productInfo[1] + "-" + productInfo[2];
-            File.WriteAllLines(local, lines);
         }
         if (amountItem == 0)
         {
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (i == remove)
-                {
-
-                }
-            }
-            productInfo.Remove(productInfo[remove]);
-            File.WriteAllLines(local, lines);
+            var erase = lines.ToList();
+            erase.RemoveAt(remove);
+            lines = erase.ToArray();
         }
+        File.WriteAllLines(productFile, lines);
     }
 
 }
