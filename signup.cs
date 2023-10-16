@@ -1,4 +1,5 @@
-﻿namespace WebShop4;
+﻿using System;
+namespace WebShop4;
 public class Customer
 {
     public string UserName { get; set; }
@@ -44,10 +45,9 @@ public class Customer
 
         Customer Costumer = new Customer(userName: name, userPw: pw, userId: GenerateUniqueId());
 
-
-
         string newCustomer = name + "-" + pw;
-        File.AppendAllText(customer[], newCustomer, Environment.NewLine);
+        string path = @"../../../customer.txt";
+        File.AppendAllText(path, newCustomer);
 
 
         static int GenerateUniqueId()
