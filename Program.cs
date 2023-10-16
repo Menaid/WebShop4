@@ -3,4 +3,4 @@ using WebShop4;
 
 Console.WriteLine("Hello, World!");
 
-CustomerInfo.ShowInfo();
+CustomerInfo.EditInfo();
