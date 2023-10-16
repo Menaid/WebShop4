@@ -16,10 +16,8 @@ public class Products
 
     public static void AddItems(string product, float price, int quantity)
     {
-        string? item = product + "-" + price + "-" + quantity;
-
+        string? item = product + "-" + price + "-" + quantity + "\n";
         File.AppendAllText(productFile, item);
-        Console.WriteLine();
     }
 
     public static void RemoveItems()
