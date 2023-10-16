@@ -1,4 +1,4 @@
-﻿
+
 namespace WebShop4;
 
 public class Products
@@ -38,11 +38,16 @@ public class Products
         Console.WriteLine("Hur många vill du ta bort?");
         int removeAmount = int.Parse(Console.ReadLine());
 
-        for (int i = 0; i < lines.Length; i++)
-        {
-            productInfo = new List<string>(lines[remove].Split("-"));
+		var line = lines[remove];
+		productInfo = line.Split("-");
 
-        }
+
+
+        //for (int i = 0; i < lines.Length; i++)
+        //{
+          //  productInfo = new List<string>(lines[remove].Split("-"));
+
+        //}
 
         int amountItem = int.Parse(productInfo[2]);
 
@@ -53,20 +58,12 @@ public class Products
             amountItem -= removeAmount;
             productInfo[2] = amountItem.ToString();
             lines[remove] = productInfo[0] + "-" + productInfo[1] + "-" + productInfo[2];
-            File.WriteAllLines(local, lines);
-        }
+                    }
         if (amountItem == 0)
         {
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (i == remove)
-                {
-
-                }
-            }
-            productInfo.Remove(productInfo[remove]);
-            File.WriteAllLines(local, lines);
+			lines.RemoveByIndex(remove);
         }
+		File.WriteAllLines(local, lines);
     }
 
 }
