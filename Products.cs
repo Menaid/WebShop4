@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebShop4
+namespace WebShop4;
+
+public class Products
 {
-    internal class Products
+    
+    public void thing()
     {
+        
     }
+    
 }
