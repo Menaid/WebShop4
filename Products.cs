@@ -19,6 +19,7 @@ public class Products
         string? item = product + "-" + price + "-" + quantity;
 
         File.AppendAllText(productFile, item);
+        Console.WriteLine();
     }
 
     public static void RemoveItems()
