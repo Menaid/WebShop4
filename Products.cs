@@ -30,38 +30,28 @@ public class Products
 
     public static void RemoveItems()
     {
-        List<string> productInfo = new List<string>();
         ShowItems();
-
         Console.WriteLine("Vilken produkt vill du ta bort från sortimentet");
         int remove = int.Parse(Console.ReadLine()) - 1;
         Console.WriteLine("Hur många vill du ta bort?");
         int removeAmount = int.Parse(Console.ReadLine());
-
-        for (int i = 0; i < lines.Length; i++)
-        {
-            productInfo = new List<string>(lines[remove].Split("-"));
-        }
-
+        var line = lines[remove];
+        var productInfo = line.Split("-");
         int amountItem = int.Parse(productInfo[2]);
-        string local = "../../../products.csv";
 
-        for (int i = 0; i < lines.Length; i++)
+        if (amountItem == removeAmount)
         {
-            if (amountItem == removeAmount && lines[remove] == lines[i])
-            {
-                var erase = lines.ToList();
-                erase.RemoveAt(remove);
-                File.WriteAllLines(local, erase);
-            }
+            var erase = lines.ToList();
+            erase.RemoveAt(remove);
+            lines = erase.ToArray();
         }
-
         if (amountItem > removeAmount)
         {
             amountItem -= removeAmount;
             productInfo[2] = amountItem.ToString();
             lines[remove] = productInfo[0] + "-" + productInfo[1] + "-" + productInfo[2];
-            File.WriteAllLines(local, lines);
         }
+        string local = "../../../products.csv";
+        File.WriteAllLines(local, lines);
     }
 }
