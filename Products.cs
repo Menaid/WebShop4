@@ -3,8 +3,8 @@ namespace WebShop4;
 
 public class Products
 {
-    public static string[] lines = File.ReadAllLines(productFile);
     const string productFile = "../../../products.csv";
+    public static string[] lines = File.ReadAllLines(productFile);
     public static void ShowItems()
     {
 
