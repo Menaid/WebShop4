@@ -19,43 +19,48 @@ public class Products
         }
     }
 
+    public static void AddItemMenu()
+    {
+        Console.WriteLine("Vänligen ange varans namn:");
+        string productName = Console.ReadLine();
+        Console.WriteLine("Vänligen ange varans pris:");
+        string cost = Console.ReadLine();
+        Console.WriteLine("Vänligen ange varans antal:");
+        string amount = Console.ReadLine();
+        AddItems(productName, cost, amount);
+    }
+
     public static void AddItems(string product, string price, string quantity)
     {
+        int newProduct;
         float newPrice;
         int newQuantity;
-        if (float.TryParse(price, out newPrice))
+        if (int.TryParse(product, out newProduct))
         {
-            if(int.TryParse(quantity, out newQuantity))
+            Console.Clear();
+            AddItemMenu();
+        }
+        else
+        {
+
+            if (float.TryParse(price, out newPrice))
             {
-                string? item = product + "-" + newPrice + "-" + newQuantity + "\n";
-                File.AppendAllText(productFile, item);
+                if (int.TryParse(quantity, out newQuantity))
+                {
+                    string? item = product + "-" + newPrice + "-" + newQuantity + "\n";
+                    File.AppendAllText(productFile, item);
+                }
+                else
+                {
+                    Console.Clear();
+                    AddItemMenu();
+                }
             }
             else
             {
                 Console.Clear();
-                Console.WriteLine("Ange en siffra");
-                Console.WriteLine("--------------");
-                Console.WriteLine("Vänligen ange varans namn:");
-                string productName = Console.ReadLine();
-                Console.WriteLine("Vänligen ange varans pris:");
-                string cost = Console.ReadLine();
-                Console.WriteLine("Vänligen ange varans antal:");
-                string amount = Console.ReadLine();
-                AddItems(product, price, quantity);
+                AddItemMenu();
             }
-        }
-        else
-        {
-            Console.Clear();
-            Console.WriteLine("Ange en siffra");
-            Console.WriteLine("--------------");
-            Console.WriteLine("Vänligen ange varans namn:");
-            string productName = Console.ReadLine();
-            Console.WriteLine("Vänligen ange varans pris:");
-            string cost = Console.ReadLine();
-            Console.WriteLine("Vänligen ange varans antal:");
-            string amount = Console.ReadLine();
-            AddItems(productName, cost, amount);
         }
     }
 
@@ -101,7 +106,7 @@ public class Products
                 RemoveItems();
             }
         }
-        else if(!int.TryParse(remove, out newRemove))
+        else if (!int.TryParse(remove, out newRemove))
         {
             Console.Clear();
             Console.WriteLine("Ange en siffra");
