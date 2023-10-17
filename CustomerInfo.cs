@@ -29,7 +29,7 @@ public class CustomerInfo
             string number = Console.ReadLine();
             int userNumber = int.Parse(number) - 1;// svaret -1 pga lista börjar på 0
 
-            for (int i = 0; i < CustomerList.Count; i++) //loop för att se ifall index = input
+            for (int i = 0; i < file.Length; i++) //loop för att se ifall index = input-1
             {
                 if (CustomerList[userNumber] == CustomerList[i])
                 {
