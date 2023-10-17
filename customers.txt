@@ -1,3 +1,4 @@
-sherlock-holmes
-john-watson
-this-this
+Namn-sak
+Lukke-sak
+Namn-sak
+Lukas-watson
