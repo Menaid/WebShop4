@@ -23,7 +23,7 @@ public class Customer
 
         if (customer.Contains(name))
         {
-            Console.WriteLine("Det finns redan en användare med namnet " + name + " vänligen välj ett annat.");
+            Console.WriteLine("Det finns redan en användare med namnet " + name + " vänligen välj ett annat.");  // varför kollar den inte namnet i customer?
             SignUp();
         }
 
@@ -32,12 +32,13 @@ public class Customer
         Console.WriteLine("Bekräfta lösenordet: ");
         string pw1 = Console.ReadLine();
 
-        while (pw != pw1 || string.IsNullOrWhiteSpace(pw))
+        while (pw != pw1 || string.IsNullOrWhiteSpace(pw))  // ska återgå och låta användaren skriva in igen
         {
             Console.WriteLine("Du angav inte samma lösenord eller så lämnade du fältet tomt, försök igen");
         }
         if (pw == pw1)
         {
+            Console.Clear();
             Console.WriteLine("Grattis, du är nu en registrerad kund!");
         }
 
