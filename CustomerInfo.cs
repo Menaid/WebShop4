@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel;
+using System.Reflection.Metadata;
 using WebShop4;
 namespace WebShop4;
 
@@ -29,44 +30,36 @@ public class CustomerInfo
             string number = Console.ReadLine();
             int userNumber = int.Parse(number) - 1;// svaret -1 pga lista börjar på 0
 
-            for (int i = 0; i < file.Length; i++) //loop för att se ifall index = input-1
+            for (int i = 0; i < file.Length; i++) //loop för att se ifall index = input
             {
-                if (CustomerList[userNumber] == CustomerList[i])
+                if (userNumber == i)
                 {
-                    string[] line = CustomerList[i].Split('-');// gör en array av namnet och lösen för att split på "-"
-                    foreach(string item in line)
+                    var thing = CustomerList[userNumber].Split('-');// gör en array av namnet och lösen för att split på "-"
+                    foreach(string item in thing)
                     {
                         Console.WriteLine(item);
                     }
                     Console.WriteLine("Vill du ändra (1)användarnamn eller (2)lösenord?");
                     string nameOrPassword = Console.ReadLine();
 
-                    var a = file[userNumber];
-                    CustomerList = new List<string>(a.Split("-"));
-
                     switch (nameOrPassword)
                     {
                         case "1":
                             Console.WriteLine("Nytt namn: ");
                             var NewName = Console.ReadLine();
-                            line[0] = NewName;
+                            thing[0] = NewName;
 
                             break;
                         case "2":
                             Console.WriteLine("Nytt lösenord: ");
                             var NewPassword = Console.ReadLine();
-                            line[1] = NewPassword;
+                            thing[1] = NewPassword;
                             break;
                     }
 
-                    line[i] = line[0] + "-" + line[1];
-                    File.WriteAllLines("../../../customers.txt", line);
+                    file[userNumber] = thing[0] + "-" + thing[1];
+                    File.WriteAllLines("../../../customers.txt", file);
                     Console.Clear();
-                }
-                else
-                {
-                    Console.WriteLine("Kunde inte hitta siffran i listan.");
-                    EditInfo();
                 }
             }
         }
@@ -75,18 +68,6 @@ public class CustomerInfo
         {
             Console.WriteLine("exit");
         }
-
-
-
-        var input = Console.ReadLine();
-        if (input == "")
-        {
-            Console.Clear();
-            //Menu.AdminChoice();
-        }
-
-
-
 
     }
 }
