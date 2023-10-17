@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using WebShop4;
+namespace WebShop4;
 
-namespace WebShop4
+internal class Test
 {
-    internal class Test
+    public static void Tests()
     {
+
     }
 }
