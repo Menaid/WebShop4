@@ -19,11 +19,46 @@ public class Products
         }
     }
 
-    public static void AddItems(string product, float price, int quantity)
+    public static void AddItems(string product, string price, string quantity)
     {
-        string? item = product + "-" + price + "-" + quantity + "\n";
-        File.AppendAllText(productFile, item);
+        float newPrice;
+        int newQuantity;
+        if (float.TryParse(price, out newPrice))
+        {
+            if(int.TryParse(quantity, out newQuantity))
+            {
+                string? item = product + "-" + newPrice + "-" + newQuantity + "\n";
+                File.AppendAllText(productFile, item);
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Ange en siffra");
+                Console.WriteLine("--------------");
+                Console.WriteLine("Vänligen ange varans namn:");
+                string productName = Console.ReadLine();
+                Console.WriteLine("Vänligen ange varans pris:");
+                string cost = Console.ReadLine();
+                Console.WriteLine("Vänligen ange varans antal:");
+                string amount = Console.ReadLine();
+                AddItems(product, price, quantity);
+            }
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Ange en siffra");
+            Console.WriteLine("--------------");
+            Console.WriteLine("Vänligen ange varans namn:");
+            string productName = Console.ReadLine();
+            Console.WriteLine("Vänligen ange varans pris:");
+            string cost = Console.ReadLine();
+            Console.WriteLine("Vänligen ange varans antal:");
+            string amount = Console.ReadLine();
+            AddItems(productName, cost, amount);
+        }
     }
+
 
     public static void RemoveItems()
     {
