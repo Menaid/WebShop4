@@ -1,7 +1,9 @@
-﻿public class SystemLogin
+﻿using System;
+
+public class SystemLogin
 {
-    private const string FileUName = "../../../users.txt";
-    private const string FileAName = "../../../admins.txt";
+    private const string FileUName = "../../../users.csv";
+    private const string FileAName = "../../../admins.csv";
 
     public static void startLogin()
     {
@@ -49,42 +51,23 @@
         string password = Console.ReadLine();
         Console.Clear();
 
-        User newUser = new User { Username = username, Password = password };
-        CreateAdmin(newUser);
-    }
-
-    public static void userPage()
-    {
-        Console.Clear();
-        Console.Write("\nAnge användarnamn: ");
-        string username = Console.ReadLine();
-        Console.Write("Ange lösenord: ");
-        string password = Console.ReadLine();
-
-        User newUser = new User { Username = username, Password = password };
-        CreateUser(newUser);
-    }
-
-    public static void CreateAdmin(User user)
-    {
-        if (AdminExists(user.Username))
+        User adminLogin = new User { Username = username, Password = password };
+        if (AdminExists(adminLogin.Username))
         {
             Console.WriteLine("____________________________________");
-            Console.WriteLine("\nAdminnamn finns redan. Testa igen.\n");
+            Console.WriteLine("\nVälkommen " + adminLogin.Username);
             Console.WriteLine("____________________________________");
             return;
-        }
-
-        using (StreamWriter writer = File.AppendText(FileAName))
+        } else
         {
-            string line = $"{user.Username}-{user.Password}";
-            writer.WriteLine(line);
+            int timer = 2000;
+            Console.WriteLine("_____________________________________________");
+            Console.WriteLine("\nAdminnamn eller lösenord fel. Testa igen.\n");
+            Console.WriteLine("_____________________________________________");
+            Thread.Sleep(timer);
+            Console.Clear();
+            startLogin();
         }
-
-        Console.Clear();
-        Console.WriteLine("__________________________");
-        Console.WriteLine("\nVälkommen "+ user.Username);
-        Console.WriteLine("__________________________");
     }
 
     private static bool AdminExists(string username)
@@ -105,27 +88,33 @@
         return false;
     }
 
-    public static void CreateUser(User user)
+    public static void userPage()
     {
-        if (UserExists(user.Username))
+        Console.Clear();
+        Console.Write("\nAnge användarnamn: ");
+        string username = Console.ReadLine();
+        Console.Write("Ange lösenord: ");
+        string password = Console.ReadLine();
+
+        User userLogin = new User { Username = username, Password = password };
+        if (UserExists(userLogin.Username))
         {
             Console.WriteLine("____________________________________");
-            Console.WriteLine("användarnamn finns redan.");
+            Console.WriteLine("\nVälkommen " + userLogin.Username);
             Console.WriteLine("____________________________________");
 
             return;
         }
-
-        using (StreamWriter writer = File.AppendText(FileUName))
+        else
         {
-            string line = $"{user.Username}-{user.Password}";
-            writer.WriteLine(line);
+            int timer = 2000;
+            Console.WriteLine("_______________________________________________");
+            Console.WriteLine("\användarnamn eller lösenord fel. Testa igen.\n");
+            Console.WriteLine("_______________________________________________");
+            Thread.Sleep(timer);
+            Console.Clear();
+            startLogin();            
         }
-
-        Console.Clear();
-        Console.WriteLine("__________________________");
-        Console.WriteLine("\nVälkommen " + user.Username);
-        Console.WriteLine("__________________________");
 
     }
 
