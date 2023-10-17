@@ -1,4 +1,10 @@
 
+using System;
+using System.Diagnostics.Tracing;
+using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
+using System.Threading.Channels;
+
 namespace WebShop4;
 
 public class Products
@@ -23,25 +29,49 @@ public class Products
     {
         ShowItems();
         Console.WriteLine("Vilken produkt vill du ta bort från sortimentet");
-        int remove = int.Parse(Console.ReadLine()) - 1;
-        Console.WriteLine("Hur många vill du ta bort?");
-        int removeAmount = int.Parse(Console.ReadLine());
-        var line = lines[remove];
-        var productInfo = line.Split("-");
-        int amountItem = int.Parse(productInfo[2]);
+        string remove = Console.ReadLine();
+        int newRemove;
+        int newRemoveAmount;
+        if (int.TryParse(remove, out newRemove))
+        {
+            newRemove -= 1;
+            Console.WriteLine("Hur många vill du ta bort?");
+            string removeAmount = Console.ReadLine();
+            if (int.TryParse(removeAmount, out newRemoveAmount))
+            {
 
-        if (amountItem > 1 && amountItem >= removeAmount)
-        {
-            amountItem -= removeAmount;
-            productInfo[2] = amountItem.ToString();
-            lines[remove] = productInfo[0] + "-" + productInfo[1] + "-" + productInfo[2];
+                var line = lines[newRemove];
+                var productInfo = line.Split("-");
+                int amountItem = int.Parse(productInfo[2]);
+
+                if (amountItem > 1 && amountItem >= newRemoveAmount)
+                {
+                    amountItem -= newRemoveAmount;
+                    productInfo[2] = amountItem.ToString();
+                    lines[newRemove] = productInfo[0] + "-" + productInfo[1] + "-" + productInfo[2];
+                }
+                if (amountItem == 0)
+                {
+                    var erase = lines.ToList();
+                    erase.RemoveAt(newRemove);
+                    lines = erase.ToArray();
+                }
+                File.WriteAllLines(productFile, lines);
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Ange en siffra");
+                Console.WriteLine("--------------");
+                RemoveItems();
+            }
         }
-        if (amountItem == 0)
+        else if(!int.TryParse(remove, out newRemove))
         {
-            var erase = lines.ToList();
-            erase.RemoveAt(remove);
-            lines = erase.ToArray();
+            Console.Clear();
+            Console.WriteLine("Ange en siffra");
+            Console.WriteLine("--------------");
+            RemoveItems();
         }
-        File.WriteAllLines(productFile, lines);
     }
 }
