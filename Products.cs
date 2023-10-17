@@ -1,10 +1,10 @@
-﻿
+
 namespace WebShop4;
 
 public class Products
 {
-    public static string[] lines = File.ReadAllLines("../../../products.csv");
-
+    const string productFile = "../../../products.csv";
+    public static string[] lines = File.ReadAllLines(productFile);
     public static void ShowItems()
     {
         for (int i = 0; i < lines.Length; i++)
@@ -12,21 +12,12 @@ public class Products
             Console.WriteLine(i + 1 + ": " + lines[i]);
         }
     }
-    /*
+
     public static void AddItems(string product, float price, int quantity)
     {
-        string? productName = product;
-        float cost = price;
-        int amount = quantity;
-        string newCost = cost.ToString();
-        string newAmount = amount.ToString();
-
-        string? item = productName + "-" + newCost + "-" + newAmount;
-        Console.ReadKey();
-        string line = "../../../products.csv";
-        File.AppendAllText(line, item);
+        string? item = product + "-" + price + "-" + quantity + "\n";
+        File.AppendAllText(productFile, item);
     }
-    */
 
     public static void RemoveItems()
     {
@@ -39,19 +30,18 @@ public class Products
         var productInfo = line.Split("-");
         int amountItem = int.Parse(productInfo[2]);
 
-        if (amountItem == removeAmount)
-        {
-            var erase = lines.ToList();
-            erase.RemoveAt(remove);
-            lines = erase.ToArray();
-        }
-        if (amountItem > removeAmount)
+        if (amountItem > 1 && amountItem >= removeAmount)
         {
             amountItem -= removeAmount;
             productInfo[2] = amountItem.ToString();
             lines[remove] = productInfo[0] + "-" + productInfo[1] + "-" + productInfo[2];
         }
-        string local = "../../../products.csv";
-        File.WriteAllLines(local, lines);
+        if (amountItem == 0)
+        {
+            var erase = lines.ToList();
+            erase.RemoveAt(remove);
+            lines = erase.ToArray();
+        }
+        File.WriteAllLines(productFile, lines);
     }
 }
