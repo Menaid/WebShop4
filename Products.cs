@@ -1,10 +1,4 @@
 
-using System;
-using System.Diagnostics.Tracing;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
-using System.Threading.Channels;
-
 namespace WebShop4;
 
 public class Products
