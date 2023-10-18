@@ -14,9 +14,14 @@ public class CustomerInfo
         Console.WriteLine("Registrerade kunder:");
         foreach (string item in file)//kopierar användare från fil till lista
         {
-            CustomerList.Add(file[i]);
+            CustomerList.Add(item);
+        }
+
+        for (int i = 0; i < CustomerList.Count; i++) //skriver ut lista på användare
+        {
             Console.WriteLine(i + 1 + ". " + CustomerList[i]);
         }
+
         Console.WriteLine("Vill du (1)ändra på en användare eller (2)gå tillbaka?");//ger val för edit eller exit
         var choice = Console.ReadLine();
 
@@ -31,17 +36,18 @@ public class CustomerInfo
             string number = Console.ReadLine();
             int userNumber = int.Parse(number) - 1;// svaret -1 pga lista börjar på 0
 
-            for (int i = 0; i < file.Length; i++) //loop för att se ifall index = input
+            for (int i = 0; i < file.Length; i++) //loop för att se ifall index = input-1
             {
-                if (number == i)
+                if (userNumber == i)
                 {
-                    var thing = CustomerList[number].Split('-');// gör en array av namnet och lösen för att split på "-"
+                    var thing = CustomerList[userNumber].Split('-');// separerar vald linje på "-"
                     foreach(string item in thing)
                     {
                         Console.WriteLine(item);
                     }
                     Console.WriteLine("Vill du ändra (1)användarnamn eller (2)lösenord?");
                     string nameOrPassword = Console.ReadLine();
+
                     switch (nameOrPassword)
                     {
                         case "1":
@@ -56,7 +62,8 @@ public class CustomerInfo
                             thing[1] = NewPassword;
                             break;
                     }
-                    file[number] = thing[0] + "-" + thing[1];
+
+                    file[userNumber] = thing[0] + "-" + thing[1];
                     File.WriteAllLines("../../../customers.txt", file);
                     Console.Clear();
                     EditInfo();
@@ -74,5 +81,6 @@ public class CustomerInfo
             Console.WriteLine();
             EditInfo();
         }
+
     }
 }
