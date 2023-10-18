@@ -1,1 +1,10 @@
-﻿using WebShop4;
+
+using WebShop4;
+
+
+Customer.SignUp();
+
+
+SystemLogin.startLogin();
+
+//CustomerInfo.EditInfo();
