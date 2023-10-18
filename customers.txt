@@ -1,3 +1,9 @@
 Namn-sak
+<<<<<<< HEAD
 anvs-lasen
 sak-namn
+=======
+Lukke-sak
+L-sak
+Lukas-watson
+>>>>>>> 9c659de60dc7aa1d20d26007f05cc340fe052586
