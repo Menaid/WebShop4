@@ -11,6 +11,7 @@ public class CustomerInfo
         string[] file = File.ReadAllLines("../../../customers.txt"); // läser användare från fil
         List<string> CustomerList = new List<string>(); //skapar ny lista
 
+        Console.WriteLine("Registrerade kunder:");
         foreach (string item in file)//kopierar användare från fil till lista
         {
             CustomerList.Add(item);
@@ -26,7 +27,12 @@ public class CustomerInfo
 
         if (choice == "1")
         {
+            Console.Clear();
             Console.WriteLine("Välj siffran för den användare som ska redigeras: ");
+            for (int i = 0; i < CustomerList.Count; i++) //skriver ut lista på användare
+            {
+                Console.WriteLine(i + 1 + ". " + CustomerList[i]);
+            }
             string number = Console.ReadLine();
             int userNumber = int.Parse(number) - 1;// svaret -1 pga lista börjar på 0
 
@@ -59,14 +65,22 @@ public class CustomerInfo
 
                     file[userNumber] = thing[0] + "-" + thing[1];
                     File.WriteAllLines("../../../customers.txt", file);
+                    Console.WriteLine("Ändring genomförd.");
                     Console.Clear();
+                    EditInfo();
                 }
             }
+        }
+        else if(choice == "2")
+        {
+            Console.WriteLine("exit");
         }
 
         else
         {
-            Console.WriteLine("exit");
+            Console.WriteLine("Ogiltigt val. ");
+            Console.WriteLine();
+            EditInfo();
         }
 
     }
