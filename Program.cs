@@ -2,7 +2,7 @@
 using WebShop4;
 
 
-Customer.SignUp();
+//Customer.SignUp();
 
 
 SystemLogin.startLogin();
