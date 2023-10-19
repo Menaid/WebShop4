@@ -30,7 +30,7 @@ public class Customer
         List<string> split = new List<string>();
         foreach (var item in customer)
         {
-            split = new List<string>(item.Split(" - "));
+            split = new List<string>(item.Split("-"));
             if (name == split[0])
             {
                 Console.WriteLine("Det finns redan en användare med namnet " + name + " vänligen välj ett annat.");
@@ -56,8 +56,12 @@ public class Customer
         }
 
 
+<<<<<<< HEAD
         //lägger till alla som registrerar sig i customer.csv
         string newCustomer = string.Format("{0} - {1} - {2}", name, pw, GenerateUniqueId());
+=======
+        string newCustomer = name + "-" + pw + GenerateUniqueId();
+>>>>>>> 45e4ef8bf6c01ef91d7db8216e24ae0fa6ea2111
         string path = "../../../customer.csv";
         File.AppendAllText(path, newCustomer + Environment.NewLine);
 
