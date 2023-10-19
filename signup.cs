@@ -52,16 +52,11 @@ public class Customer
         {
             Console.Clear();
             Console.WriteLine("Grattis, du är nu en registrerad kund!");
-            // GÅ TILL USER MENY
         }
 
 
-<<<<<<< HEAD
         //lägger till alla som registrerar sig i customer.csv
-        string newCustomer = string.Format("{0} - {1} - {2}", name, pw, GenerateUniqueId());
-=======
         string newCustomer = name + "-" + pw + GenerateUniqueId();
->>>>>>> 45e4ef8bf6c01ef91d7db8216e24ae0fa6ea2111
         string path = "../../../customer.csv";
         File.AppendAllText(path, newCustomer + Environment.NewLine);
 
@@ -69,10 +64,11 @@ public class Customer
         //skapar en ny .csv fil för var person som registrerar sig
         string cartName = $"Cart + {name}";
         string pathCart = $"../../../{cartName}.csv";
-        string newCart = string.Format("{0} - {1} - {2}", name, pw, GenerateUniqueId());
+        string newCart = name + "-" + pw + GenerateUniqueId();
         File.WriteAllText(pathCart, newCart);
 
 
+        SystemLogin.startLogin();
         Customer Costumer = new Customer(userName: name, userPw: pw, userCart: newCart, userId: GenerateUniqueId());
 
 
