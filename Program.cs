@@ -2,7 +2,7 @@ using WebShop4;
 
 Customer.SignUp();
 
-SystemLogin.startLogin();
+//SystemLogin.startLogin();
 
-Products.AddItemMenu();
+//Products.AddItemMenu();
 
