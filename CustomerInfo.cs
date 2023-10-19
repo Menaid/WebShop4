@@ -9,7 +9,7 @@ public class CustomerInfo
    
     public static void EditInfo()
     {
-        string[] file = File.ReadAllLines("../../../customers.txt"); // läser användare från fil
+        string[] file = File.ReadAllLines("../../../customer.csv"); // läser användare från fil
         List<string> CustomerList = new List<string>(); //skapar ny lista
 
         Console.WriteLine("Registrerade kunder:");
@@ -42,10 +42,7 @@ public class CustomerInfo
                 if (userNumber == i)
                 {
                     var thing = CustomerList[userNumber].Split('-');// separerar vald linje på "-"
-                    foreach(string item in thing)
-                    {
-                        Console.WriteLine(item);
-                    }
+                    
                     Console.WriteLine("Vill du ändra (1)användarnamn eller (2)lösenord?");
                     string nameOrPassword = Console.ReadLine();
 
@@ -55,17 +52,18 @@ public class CustomerInfo
                             Console.WriteLine("Nytt namn: ");
                             var NewName = Console.ReadLine();
                             thing[0] = NewName;
-
+                           
                             break;
                         case "2":
                             Console.WriteLine("Nytt lösenord: ");
                             var NewPassword = Console.ReadLine();
                             thing[1] = NewPassword;
+                            
                             break;
                     }
 
-                    file[userNumber] = thing[0] + "-" + thing[1];
-                    File.WriteAllLines("../../../customers.txt", file);
+                    file[userNumber] = thing[0] + "-" + thing[1] +"-"+ thing[2];
+                    File.WriteAllLines("../../../customer.csv", file);
                     Console.Clear();
                     AdminMenu.Menu();
                 }

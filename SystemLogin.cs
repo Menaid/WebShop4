@@ -31,14 +31,15 @@ public class SystemLogin
         {
             case 1:
                 Console.Beep(500, 500);
-                SystemLogin.adminPage();
+                adminPage();
                 break;
             case 2:
                 Console.Beep(500, 500);
-                SystemLogin.userPage();
+                userPage();
                 break;
             case 3:
                 Console.Beep(500, 500);
+                Console.Clear();
                 Customer.Register();
                 break;
             case 4:
@@ -100,10 +101,15 @@ public class SystemLogin
     public static void userPage()
     {
         Console.Clear();
-        Console.Write("\nAnge användarnamn: ");
+        Console.WriteLine("----------------");
+        Console.Write("\nAnge användarnamn: \n");
+        Console.WriteLine("----------------");
         string username = Console.ReadLine();
+        Console.WriteLine("----------------");
         Console.Write("Ange lösenord: ");
+        Console.WriteLine("----------------");
         string password = Console.ReadLine();
+        Console.WriteLine("----------------");
 
         User userLogin = new User { Username = username, Password = password };
         if (UserExists(userLogin.Username))
