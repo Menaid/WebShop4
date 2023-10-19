@@ -1,15 +1,31 @@
 
-using System;
-using System.Diagnostics.Tracing;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
-using System.Threading.Channels;
 
 namespace WebShop4;
 
 public class Products
 {
-    const string productFile = "../../../products.csv";
+    public static void EditCatalog()
+    {
+        Console.WriteLine("Vill du lägga till produkt ange: 1");
+        Console.WriteLine("Vill du ta bort produkt ange: 2");
+        Console.WriteLine("Vill du gå tillbaka ange: 3");
+        var input = Console.ReadLine();
+        switch (input)
+        {
+            case "1":
+                AddItemMenu();
+                break;
+            case "2":
+                RemoveItems();
+                break;
+            case "3":
+                Console.Clear();
+                AdminMenu.Menu();
+                break;
+        }
+    }
+
+const string productFile = "../../../products.csv";
     public static string[] lines = File.ReadAllLines(productFile);
     public static void ShowItems()
     {

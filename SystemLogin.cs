@@ -3,7 +3,7 @@ using WebShop4;
 
 public class SystemLogin
 {
-    private const string FileUName = "../../../users.csv";
+    private const string FileUName = "../../../customer.csv";
     private const string FileAName = "../../../admins.csv";
 
     public static void startLogin()
@@ -36,7 +36,7 @@ public class SystemLogin
                 SystemLogin.userPage();
                 break;
             case 3:
-                Customer.SignUp();
+                Customer.Register();
                 break;
             case 4:
                 Console.WriteLine("Hej då!");
@@ -61,7 +61,7 @@ public class SystemLogin
             Console.WriteLine("____________________________________");
             Console.WriteLine("\nVälkommen " + adminLogin.Username);
             Console.WriteLine("____________________________________");
-            return;
+            AdminMenu.Menu();
         }
         else
         {
@@ -114,7 +114,7 @@ public class SystemLogin
         {
             int timer = 2000;
             Console.WriteLine("_______________________________________________");
-            Console.WriteLine("\användarnamn eller lösenord fel. Testa igen.\n");
+            Console.WriteLine("\aAnvändarnamn eller lösenord fel. Testa igen.\n");
             Console.WriteLine("_______________________________________________");
             Thread.Sleep(timer);
             Console.Clear();
@@ -131,7 +131,7 @@ public class SystemLogin
             foreach (string line in lines)
             {
                 string[] parts = line.Split('-');
-                if (parts.Length == 2 && parts[0] == username.ToLower())
+                if (parts.Length == 3 && parts[0] == username.ToLower())
                 {
                     return true;
                 }

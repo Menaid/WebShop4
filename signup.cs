@@ -1,18 +1,23 @@
-﻿namespace WebShop4;
+﻿using System.Xml;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace WebShop4;
 public class Customer
 {
     public string UserName { get; set; }
     public string UserPw { get; set; }
+    public string Cart { get; set; }
     public int UserId { get; set; }
-    public Customer(string userName, string userPw, int userId)
+    
+    public Customer(string userName, string userPw, string userCart, int userId)
     {
         UserName = userName;
         UserPw = userPw;
+        Cart = userCart;
         UserId = userId;
     }
 
-
-    public static void SignUp()
+    public static void Register()
     {
         string[] customer = File.ReadAllLines("../../../customer.csv");
         Console.WriteLine("Registrera dig som ny kund");
@@ -28,7 +33,7 @@ public class Customer
             if (name == split[0])
             {
                 Console.WriteLine("Det finns redan en användare med namnet " + name + " vänligen välj ett annat.");
-                SignUp();
+                Register();
             }
         }
 
@@ -46,14 +51,24 @@ public class Customer
         {
             Console.Clear();
             Console.WriteLine("Grattis, du är nu en registrerad kund!");
-            // TILLBAKA TILL MENY??
         }
 
-        Customer Costumer = new Customer(userName: name, userPw: pw, userId: GenerateUniqueId());
 
+        //lägger till alla som registrerar sig i customer.csv
         string newCustomer = name + "-" + pw + GenerateUniqueId();
         string path = "../../../customer.csv";
         File.AppendAllText(path, newCustomer + Environment.NewLine);
+
+
+        //skapar en ny .csv fil för var person som registrerar sig
+        string cartName = $"Cart + {name}";
+        string pathCart = $"../../../{cartName}.csv";
+        string newCart = name + "-" + pw + "-" + GenerateUniqueId();
+        File.WriteAllText(pathCart, newCart);
+
+
+        SystemLogin.startLogin();
+        Customer Costumer = new Customer(userName: name, userPw: pw, userCart: newCart, userId: GenerateUniqueId());
 
 
         static int GenerateUniqueId()
@@ -62,17 +77,3 @@ public class Customer
         }
     }
 }
-
-
-
-
-/*
-// Läser innehållet i filen
-string fileContent = File.ReadAllText(filePath);
-
-// Kontrollerar om filen är tom
-if (string.IsNullOrEmpty(fileContent))
-{
-    // Tar bort filen om den är tom
-    File.Delete(filePath);
-*/
