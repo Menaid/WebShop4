@@ -1,7 +1,4 @@
 ﻿
 namespace WebShop4;
 
-public class Transactions
-{
-
-}
+public record Transactions(string userID, string product, float price, int quantity, DateTime transactiontime);
