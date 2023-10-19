@@ -1,4 +1,5 @@
 ﻿using System;
+using WebShop4;
 
 public class SystemLogin
 {
@@ -11,14 +12,15 @@ public class SystemLogin
             Console.WriteLine("VÄLKOMMEN TILL VÅR SHOP\n");
             Console.WriteLine("1. Admin login");
             Console.WriteLine("2. Kund login");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("3. Registrera dig som ny kund");
+            Console.WriteLine("4. Exit");
 
             int userChoice;
 
         while (true)
         {
             Console.Write("\nVälja Alternativ: ");
-            if (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > 3)
+            if (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > 4)
             {
                 Console.WriteLine("\nOgiltigt val. Var god försök igen.\n");
                 continue;
@@ -35,6 +37,9 @@ public class SystemLogin
                 SystemLogin.userPage();
                 break;
             case 3:
+                Customer.SignUp();
+                break;
+            case 4:
                 Console.WriteLine("Hej då!");
                 Environment.Exit(0);
                 break;

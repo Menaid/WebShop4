@@ -1,7 +1,4 @@
 using WebShop4;
 
-
-Customer.SignUp();
-
-
 SystemLogin.startLogin();
+Customer.SignUp();
