@@ -8,16 +8,6 @@ public class SystemLogin
 
     public static void startLogin()
     {
-<<<<<<< HEAD
-        
-            Console.WriteLine("VÄLKOMMEN TILL VÅR SHOP\n");
-            Console.WriteLine("1. Admin login");
-            Console.WriteLine("2. Kund login");
-            Console.WriteLine("3. Registrera dig som ny kund");
-            Console.WriteLine("4. Exit");
-=======
->>>>>>> login
-
         Console.WriteLine("VÄLKOMMEN TILL VÅR SHOP\n");
         Console.WriteLine("1. Admin login");
         Console.WriteLine("2. Kund login");
