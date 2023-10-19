@@ -102,12 +102,12 @@ public class SystemLogin
     {
         Console.Clear();
         Console.WriteLine("----------------");
-        Console.Write("\nAnge användarnamn: \n");
-        Console.WriteLine("----------------");
+        Console.Write("Ange användarnamn: ");
+        Console.WriteLine("\n----------------");
         string username = Console.ReadLine();
         Console.WriteLine("----------------");
         Console.Write("Ange lösenord: ");
-        Console.WriteLine("----------------");
+        Console.WriteLine("\n----------------");
         string password = Console.ReadLine();
         Console.WriteLine("----------------");
 
