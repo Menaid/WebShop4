@@ -1,5 +1,8 @@
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 74c8edc365c227980f5ee4da98d20198fc4f73ee
 namespace WebShop4;
 
 public class Products
