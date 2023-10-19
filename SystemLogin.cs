@@ -30,15 +30,19 @@ public class SystemLogin
         switch (userChoice)
         {
             case 1:
+                Console.Beep(500, 500);
                 SystemLogin.adminPage();
                 break;
             case 2:
+                Console.Beep(500, 500);
                 SystemLogin.userPage();
                 break;
             case 3:
+                Console.Beep(500, 500);
                 Customer.Register();
                 break;
             case 4:
+                Console.Beep(500, 500);
                 Console.WriteLine("Hej då!");
                 Environment.Exit(0);
                 break;
@@ -108,7 +112,16 @@ public class SystemLogin
             Console.WriteLine("\nVälkommen " + userLogin.Username);
             Console.WriteLine("____________________________________");
 
-            return;
+            Console.WriteLine("För att gå tillbaka ange: 1");
+            var input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    Console.Clear();
+                    startLogin();
+                    break;
+            }
         }
         else
         {

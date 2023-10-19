@@ -62,10 +62,9 @@ public class Customer
 
         //skapar en ny .csv fil för var person som registrerar sig
         string cartName = $"Cart + {name}";
-        string pathCart = $"../../../{cartName}.csv";
+        string pathCart = $"../../../Carts/{cartName}.csv";
         string newCart = name + "-" + pw + "-" + GenerateUniqueId();
         File.WriteAllText(pathCart, newCart);
-
 
         SystemLogin.startLogin();
         Customer Costumer = new Customer(userName: name, userPw: pw, userCart: newCart, userId: GenerateUniqueId());

@@ -6,9 +6,11 @@ public class Products
 {
     public static void EditCatalog()
     {
+        Console.WriteLine("------------------------------");
         Console.WriteLine("Vill du lägga till produkt ange: 1");
         Console.WriteLine("Vill du ta bort produkt ange: 2");
         Console.WriteLine("Vill du gå tillbaka ange: 3");
+        Console.WriteLine("------------------------------");
         var input = Console.ReadLine();
         switch (input)
         {
@@ -65,6 +67,8 @@ const string productFile = "../../../products.csv";
                 {
                     string? item = product + "-" + newPrice + "-" + newQuantity + "\n";
                     File.AppendAllText(productFile, item);
+                    Console.Clear();
+                    EditCatalog();
                 }
                 else
                 {
@@ -113,6 +117,8 @@ const string productFile = "../../../products.csv";
                     lines = erase.ToArray();
                 }
                 File.WriteAllLines(productFile, lines);
+                Console.Clear();
+                EditCatalog();
             }
             else
             {
