@@ -3,7 +3,32 @@ namespace WebShop4;
 
 public class Products
 {
-    const string productFile = "../../../products.csv";
+    public static void EditCatalog()
+    {
+        Console.Clear();
+        ShowItems();
+        Console.WriteLine("------------------------------");
+        Console.WriteLine("Vill du lägga till produkt ange: 1");
+        Console.WriteLine("Vill du ta bort produkt ange: 2");
+        Console.WriteLine("Vill du gå tillbaka ange: 3");
+        Console.WriteLine("------------------------------");
+        var input = Console.ReadLine();
+        switch (input)
+        {
+            case "1":
+                AddItemMenu();
+                break;
+            case "2":
+                RemoveItems();
+                break;
+            case "3":
+                Console.Clear();
+                AdminMenu.Menu();
+                break;
+        }
+    }
+
+const string productFile = "../../../products.csv";
     public static string[] lines = File.ReadAllLines(productFile);
     public static void ShowItems()
     {
@@ -15,6 +40,7 @@ public class Products
 
     public static void AddItemMenu()
     {
+        ShowItems();
         Console.WriteLine("Vänligen ange varans namn:");
         string productName = Console.ReadLine();
         Console.WriteLine("Vänligen ange varans pris:");
@@ -43,17 +69,17 @@ public class Products
                 {
                     string? item = product + "-" + newPrice + "-" + newQuantity + "\n";
                     File.AppendAllText(productFile, item);
+                    Console.Clear();
+                    EditCatalog();
                 }
                 else
                 {
-                    Console.Clear();
-                    AddItemMenu();
+                    EditCatalog();
                 }
             }
             else
             {
-                Console.Clear();
-                AddItemMenu();
+                EditCatalog();
             }
         }
     }
@@ -62,7 +88,7 @@ public class Products
     public static void RemoveItems()
     {
         ShowItems();
-        Console.WriteLine("Vilken produkt vill du ta bort från sortimentet");
+        Console.WriteLine("Vilken produkt vill du ta bort från sortimentet? Ange siffra:");
         string remove = Console.ReadLine();
         int newRemove;
         int newRemoveAmount;
@@ -84,13 +110,15 @@ public class Products
                     productInfo[2] = amountItem.ToString();
                     lines[newRemove] = productInfo[0] + "-" + productInfo[1] + "-" + productInfo[2];
                 }
-                if (amountItem == 0)
+                if (amountItem <= 0)
                 {
                     var erase = lines.ToList();
                     erase.RemoveAt(newRemove);
                     lines = erase.ToArray();
                 }
                 File.WriteAllLines(productFile, lines);
+                Console.Clear();
+                EditCatalog();
             }
             else
             {
@@ -103,9 +131,7 @@ public class Products
         else if (!int.TryParse(remove, out newRemove))
         {
             Console.Clear();
-            Console.WriteLine("Ange en siffra");
-            Console.WriteLine("--------------");
-            RemoveItems();
+            EditCatalog();
         }
     }
 }

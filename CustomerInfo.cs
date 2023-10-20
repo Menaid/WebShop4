@@ -6,12 +6,14 @@ namespace WebShop4;
 
 public class CustomerInfo
 {
+   
     public static void EditInfo()
     {
-        string[] file = File.ReadAllLines("../../../customers.txt"); // läser användare från fil
+        string[] file = File.ReadAllLines("../../../customer.csv"); // läser användare från fil
         List<string> CustomerList = new List<string>(); //skapar ny lista
-
+        Console.WriteLine();
         Console.WriteLine("Registrerade kunder:");
+        Console.WriteLine();
         foreach (string item in file)//kopierar användare från fil till lista
         {
             CustomerList.Add(item);
@@ -21,14 +23,16 @@ public class CustomerInfo
         {
             Console.WriteLine(i + 1 + ". " + CustomerList[i]);
         }
+        Console.WriteLine();
 
-        Console.WriteLine("Vill du (1)ändra på en användare eller (2)gå tillbaka?");//ger val för edit eller exit
+        Console.WriteLine("För att redigera en användare ange: 1\nFör att gå tillbaka ange: 2");//ger val för edit eller exit
         var choice = Console.ReadLine();
 
         if (choice == "1")
         {
             Console.Clear();
             Console.WriteLine("Välj siffran för den användare som ska redigeras: ");
+
             for (int i = 0; i < CustomerList.Count; i++) //skriver ut lista på användare
             {
                 Console.WriteLine(i + 1 + ". " + CustomerList[i]);
@@ -41,11 +45,8 @@ public class CustomerInfo
                 if (userNumber == i)
                 {
                     var thing = CustomerList[userNumber].Split('-');// separerar vald linje på "-"
-                    foreach(string item in thing)
-                    {
-                        Console.WriteLine(item);
-                    }
-                    Console.WriteLine("Vill du ändra (1)användarnamn eller (2)lösenord?");
+                    
+                    Console.WriteLine("För att ändra användarnamn ange: 1\nFör att ändra lösenord ange: 2");
                     string nameOrPassword = Console.ReadLine();
 
                     switch (nameOrPassword)
@@ -54,25 +55,29 @@ public class CustomerInfo
                             Console.WriteLine("Nytt namn: ");
                             var NewName = Console.ReadLine();
                             thing[0] = NewName;
-
+                           
                             break;
                         case "2":
                             Console.WriteLine("Nytt lösenord: ");
                             var NewPassword = Console.ReadLine();
                             thing[1] = NewPassword;
                             break;
+                        default:
+                            EditInfo();
+                            break;
                     }
 
-                    file[userNumber] = thing[0] + "-" + thing[1];
-                    File.WriteAllLines("../../../customers.txt", file);
+                    file[userNumber] = thing[0] + "-" + thing[1] +"-"+ thing[2];
+                    File.WriteAllLines("../../../customer.csv", file);
                     Console.Clear();
-                    EditInfo();
+                    AdminMenu.Menu();
                 }
             }
         }
         else if(choice == "2")
         {
-            Console.WriteLine("exit");
+            Console.Clear();
+            AdminMenu.Menu();
         }
 
         else
