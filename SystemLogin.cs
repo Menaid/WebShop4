@@ -18,7 +18,7 @@ public class SystemLogin
 
         while (true)
         {
-            Console.Write("\nVälja Alternativ: ");
+            Console.Write("\nVälj alternativ: ");
             if (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > 4)
             {
                 Console.WriteLine("\nOgiltigt val. Var god försök igen.\n");
@@ -61,7 +61,7 @@ public class SystemLogin
         Console.Clear();
 
         User adminLogin = new User { Username = username, Password = password };
-        if (AdminExists(adminLogin.Username))
+        if (AdminExists(adminLogin.Username) && AdminExists(adminLogin.Password))
         {
             Console.WriteLine("____________________________________");
             Console.WriteLine("\nVälkommen " + adminLogin.Username);
@@ -114,6 +114,7 @@ public class SystemLogin
         User userLogin = new User { Username = username, Password = password };
         if (UserExists(userLogin.Username))
         {
+            Console.Clear();
             Console.WriteLine("____________________________________");
             Console.WriteLine("\nVälkommen " + userLogin.Username);
             Console.WriteLine("____________________________________");

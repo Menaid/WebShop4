@@ -4,7 +4,8 @@ public class AdminMenu
 {
     public static void Menu()
     {
-        Console.WriteLine("För att redigera en användare ange: 1");
+
+        Console.WriteLine("För att se eller redigera användarlista ange: 1");
         Console.WriteLine("För att redigera katalogen ange: 2");
         Console.WriteLine("För att logga ut ange: 3");
         var Admininput1 = Console.ReadLine();
