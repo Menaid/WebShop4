@@ -24,7 +24,7 @@ public class Customer
         Console.WriteLine("--------------------------");
         Console.WriteLine("Ange ditt namn: ");
         string name = Console.ReadLine();
-        Console.Clear();
+        
 
         List<string> split = new List<string>();
         foreach (var item in customer)
@@ -50,7 +50,7 @@ public class Customer
         if (pw == pw1)
         {
             Console.Clear();
-            Console.WriteLine("Grattis, du är nu en registrerad kund!");
+            Console.WriteLine("Grattis, du är nu en registrerad kund!\nVänligen logga in för att få tillgång till ditt nya konto!\n");
         }
 
 

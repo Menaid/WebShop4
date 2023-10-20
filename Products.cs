@@ -6,6 +6,8 @@ public class Products
 {
     public static void EditCatalog()
     {
+        Console.Clear();
+        ShowItems();
         Console.WriteLine("------------------------------");
         Console.WriteLine("Vill du lägga till produkt ange: 1");
         Console.WriteLine("Vill du ta bort produkt ange: 2");
@@ -39,6 +41,7 @@ const string productFile = "../../../products.csv";
 
     public static void AddItemMenu()
     {
+        ShowItems();
         Console.WriteLine("Vänligen ange varans namn:");
         string productName = Console.ReadLine();
         Console.WriteLine("Vänligen ange varans pris:");
@@ -72,14 +75,12 @@ const string productFile = "../../../products.csv";
                 }
                 else
                 {
-                    Console.Clear();
-                    AddItemMenu();
+                    EditCatalog();
                 }
             }
             else
             {
-                Console.Clear();
-                AddItemMenu();
+                EditCatalog();
             }
         }
     }
@@ -88,7 +89,7 @@ const string productFile = "../../../products.csv";
     public static void RemoveItems()
     {
         ShowItems();
-        Console.WriteLine("Vilken produkt vill du ta bort från sortimentet");
+        Console.WriteLine("Vilken produkt vill du ta bort från sortimentet? Ange siffra:");
         string remove = Console.ReadLine();
         int newRemove;
         int newRemoveAmount;
@@ -131,9 +132,7 @@ const string productFile = "../../../products.csv";
         else if (!int.TryParse(remove, out newRemove))
         {
             Console.Clear();
-            Console.WriteLine("Ange en siffra");
-            Console.WriteLine("--------------");
-            RemoveItems();
+            EditCatalog();
         }
     }
 }
