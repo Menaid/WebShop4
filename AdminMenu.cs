@@ -22,6 +22,9 @@ public class AdminMenu
                 Console.Clear();
                 SystemLogin.startLogin();
                 break;
+            default:
+                Console.WriteLine("Wrong input!");
+                break;
         }
     }
 }

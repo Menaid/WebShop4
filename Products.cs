@@ -1,4 +1,3 @@
-
 namespace WebShop4;
 
 public class Products
@@ -28,8 +27,9 @@ public class Products
         }
     }
 
-const string productFile = "../../../products.csv";
+    const string productFile = "../../../products.csv";
     public static string[] lines = File.ReadAllLines(productFile);
+
     public static void ShowItems()
     {
         for (int i = 0; i < lines.Length; i++)
@@ -38,7 +38,7 @@ const string productFile = "../../../products.csv";
         }
     }
 
-    public static void AddItemMenu()
+    private static void AddItemMenu()
     {
         ShowItems();
         Console.WriteLine("Vänligen ange varans namn:");
@@ -62,7 +62,6 @@ const string productFile = "../../../products.csv";
         }
         else
         {
-
             if (float.TryParse(price, out newPrice))
             {
                 if (int.TryParse(quantity, out newQuantity))
@@ -99,7 +98,6 @@ const string productFile = "../../../products.csv";
             string removeAmount = Console.ReadLine();
             if (int.TryParse(removeAmount, out newRemoveAmount))
             {
-
                 var line = lines[newRemove];
                 var productInfo = line.Split("-");
                 int amountItem = int.Parse(productInfo[2]);
@@ -110,12 +108,14 @@ const string productFile = "../../../products.csv";
                     productInfo[2] = amountItem.ToString();
                     lines[newRemove] = productInfo[0] + "-" + productInfo[1] + "-" + productInfo[2];
                 }
+
                 if (amountItem <= 0)
                 {
                     var erase = lines.ToList();
                     erase.RemoveAt(newRemove);
                     lines = erase.ToArray();
                 }
+
                 File.WriteAllLines(productFile, lines);
                 Console.Clear();
                 EditCatalog();

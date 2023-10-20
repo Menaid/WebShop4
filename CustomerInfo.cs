@@ -27,7 +27,7 @@ public class CustomerInfo
 
         Console.WriteLine("För att redigera en användare ange: 1\nFör att gå tillbaka ange: 2");//ger val för edit eller exit
         var choice = Console.ReadLine();
-
+       
         if (choice == "1")
         {
             Console.Clear();
