@@ -17,8 +17,7 @@ public class Customer
         UserId = userId;
     }
 
-
-    public static void SignUp()
+    public static void Register()
     {
         string[] customer = File.ReadAllLines("../../../customer.csv");
         Console.WriteLine("Registrera dig som ny kund");
@@ -34,7 +33,7 @@ public class Customer
             if (name == split[0])
             {
                 Console.WriteLine("Det finns redan en användare med namnet " + name + " vänligen välj ett annat.");
-                SignUp();
+                Register();
             }
         }
 
@@ -63,10 +62,9 @@ public class Customer
 
         //skapar en ny .csv fil för var person som registrerar sig
         string cartName = $"Cart + {name}";
-        string pathCart = $"../../../{cartName}.csv";
-        string newCart = name + "-" + pw + GenerateUniqueId();
+        string pathCart = $"../../../Carts/{cartName}.csv";
+        string newCart = name + "-" + pw + "-" + GenerateUniqueId();
         File.WriteAllText(pathCart, newCart);
-
 
         SystemLogin.startLogin();
         Customer Costumer = new Customer(userName: name, userPw: pw, userCart: newCart, userId: GenerateUniqueId());

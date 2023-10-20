@@ -30,15 +30,20 @@ public class SystemLogin
         switch (userChoice)
         {
             case 1:
-                SystemLogin.adminPage();
+                Console.Beep(500, 500);
+                adminPage();
                 break;
             case 2:
-                SystemLogin.userPage();
+                Console.Beep(500, 500);
+                userPage();
                 break;
             case 3:
-                Customer.SignUp();
+                Console.Beep(500, 500);
+                Console.Clear();
+                Customer.Register();
                 break;
             case 4:
+                Console.Beep(500, 500);
                 Console.WriteLine("Hej då!");
                 Environment.Exit(0);
                 break;
@@ -61,7 +66,7 @@ public class SystemLogin
             Console.WriteLine("____________________________________");
             Console.WriteLine("\nVälkommen " + adminLogin.Username);
             Console.WriteLine("____________________________________");
-            return;
+            AdminMenu.Menu();
         }
         else
         {
@@ -96,10 +101,15 @@ public class SystemLogin
     public static void userPage()
     {
         Console.Clear();
-        Console.Write("\nAnge användarnamn: ");
+        Console.WriteLine("----------------");
+        Console.Write("Ange användarnamn: ");
+        Console.WriteLine("\n----------------");
         string username = Console.ReadLine();
+        Console.WriteLine("----------------");
         Console.Write("Ange lösenord: ");
+        Console.WriteLine("\n----------------");
         string password = Console.ReadLine();
+        Console.WriteLine("----------------");
 
         User userLogin = new User { Username = username, Password = password };
         if (UserExists(userLogin.Username))
@@ -108,13 +118,22 @@ public class SystemLogin
             Console.WriteLine("\nVälkommen " + userLogin.Username);
             Console.WriteLine("____________________________________");
 
-            return;
+            Console.WriteLine("För att gå tillbaka ange: 1");
+            var input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    Console.Clear();
+                    startLogin();
+                    break;
+            }
         }
         else
         {
             int timer = 2000;
             Console.WriteLine("_______________________________________________");
-            Console.WriteLine("\användarnamn eller lösenord fel. Testa igen.\n");
+            Console.WriteLine("\aAnvändarnamn eller lösenord fel. Testa igen.\n");
             Console.WriteLine("_______________________________________________");
             Thread.Sleep(timer);
             Console.Clear();
@@ -131,7 +150,7 @@ public class SystemLogin
             foreach (string line in lines)
             {
                 string[] parts = line.Split('-');
-                if (parts.Length == 2 && parts[0] == username.ToLower())
+                if (parts.Length == 3 && parts[0] == username.ToLower())
                 {
                     return true;
                 }
