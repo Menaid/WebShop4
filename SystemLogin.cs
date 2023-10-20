@@ -121,7 +121,7 @@ public class SystemLogin
 
             Console.WriteLine("För att gå tillbaka ange: 1");
             var input = Console.ReadLine();
-
+           // Console.WriteLine("Din kundvagn innehåller för tillfället: " + );
             switch (input)
             {
                 case "1":

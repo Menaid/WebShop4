@@ -8,9 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2785802b-e65c-4622-a6b6-5afccbb9e0f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CompletedPurches.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebShop4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebShop4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + a.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + d.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + f.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + g.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + hej.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + irina.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + pelle.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + sak.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + testing.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SystemLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/customer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/signup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +32,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/399ad7d84e58e98fe2e68773a4645e29a853e763edb926f62ba1c47963ba2/Marshal.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a994edf5ab6b46e55fc1e49cff015d6702e57f4ebfaac1a730c3b6d8271c3c/NativeLibrary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c085c1d6a9bd79db8626a8f982554152f9024/LibraryImports.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d43fa890c7fc70c8ba3d3d33ee567045a39b9710f73b3ced707d8ab62d83/Console.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e24f887a8fd6b67fdd343e60a03cd8787f27bc915349b033bb154d506a725b66/ConsolePal.Windows.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -33,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "completedPurches",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -82,7 +106,7 @@
       <workItem from="1697653544612" duration="620000" />
       <workItem from="1697654189677" duration="734000" />
       <workItem from="1697794499673" duration="266000" />
-      <workItem from="1697794807059" duration="322000" />
+      <workItem from="1697794807059" duration="17107000" />
     </task>
     <servers />
   </component>
