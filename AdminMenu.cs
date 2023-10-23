@@ -8,9 +8,9 @@ public class AdminMenu
         Console.WriteLine("För att se eller redigera användarlista ange: 1");
         Console.WriteLine("För att redigera katalogen ange: 2");
         Console.WriteLine("För att logga ut ange: 3");
-        var Admininput1 = Console.ReadLine();
+        var AdminInput1 = Console.ReadLine();
         
-        switch (Admininput1)
+        switch (AdminInput1)
         {
             case "1":
                 CustomerInfo.EditInfo();

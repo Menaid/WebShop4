@@ -44,7 +44,7 @@ public class CustomerInfo
             {
                 if (userNumber == i)
                 {
-                    var thing = CustomerList[userNumber].Split('-');// separerar vald linje på "-"
+                    var thing = CustomerList[userNumber].Split(',');// separerar vald linje på "-"
                     
                     Console.WriteLine("För att ändra användarnamn ange: 1\nFör att ändra lösenord ange: 2");
                     string nameOrPassword = Console.ReadLine();
@@ -67,7 +67,7 @@ public class CustomerInfo
                             break;
                     }
 
-                    file[userNumber] = thing[0] + "-" + thing[1] +"-"+ thing[2];
+                    file[userNumber] = thing[0] + "," + thing[1] +","+ thing[2];
                     File.WriteAllLines("../../../customer.csv", file);
                     Console.Clear();
                     AdminMenu.Menu();
