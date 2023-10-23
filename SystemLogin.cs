@@ -90,7 +90,7 @@ public class SystemLogin
             string[] lines = File.ReadAllLines(FileAName);
             foreach (string line in lines)
             {
-                string[] parts = line.Split('-');
+                string[] parts = line.Split(',');
                 if (parts.Length == 2 && parts[0] == username.ToLower())
                 {
                     return true;
@@ -101,6 +101,7 @@ public class SystemLogin
         return false;
     }
 
+    public static string SignedInUser = null;
     public static void userPage()
     {
         Console.Clear();
@@ -117,6 +118,7 @@ public class SystemLogin
         User userLogin = new User { Username = username, Password = password };
         if (UserExists(userLogin.Username))
         {
+            SignedInUser = userLogin.Username;
             int timer = 2000;
             Console.Clear();
             Console.WriteLine("____________________________________");
@@ -145,7 +147,7 @@ public class SystemLogin
             string[] lines = File.ReadAllLines(FileUName);
             foreach (string line in lines)
             {
-                string[] parts = line.Split('-');
+                string[] parts = line.Split(',');
                 if (parts.Length == 3 && parts[0] == username.ToLower())
                 {
                     return true;

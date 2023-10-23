@@ -4,16 +4,12 @@ public class addProduct
 {
     const string productList = "../../../products.csv";
     public static string[] products = File.ReadAllLines(productList);
-    public static string cartName;
-    public static string userFilePath = $"../../../Carts/{cartName}.csv";
-   
+
     public static void productMenu()
     {
+        ActiveCart.CartInUse();
         Console.Clear();
-        Console.Write("skriv ditt användarnamn:");
-        cartName = Console.ReadLine();
-        Console.Clear();
-        Console.WriteLine("Hej " + cartName);
+        Console.WriteLine("Hej ");
         Console.WriteLine("\n------------------------------");
         Console.WriteLine("1. lägga till produkt");
         Console.WriteLine("2. ta bort produkt");
@@ -29,8 +25,10 @@ public class addProduct
                 Console.WriteLine("\nOgiltigt val. Var god försök igen.\n");
                 continue;
             }
+
             break;
         }
+
         switch (userChoice)
         {
             case 1:
@@ -54,15 +52,17 @@ public class addProduct
         }
     }
 
+
     public static void addToCart()
     {
+        var userFilePath = "../../../Carts/Cart." + SystemLogin.SignedInUser + ".csv";
         Console.Clear();
         Console.WriteLine("Available Products:");
         Console.WriteLine("-------------------");
         showProductsList();
         Console.WriteLine("-------------------");
         Console.WriteLine("Vill du lägga till någon produkt till din varukorg? (J) \n" +
-            "eller vill du gå tillbaka till menyn? (N) \n (J / N)");
+                          "eller vill du gå tillbaka till menyn? (N) \n (J / N)");
         string? answer = Console.ReadLine().ToLower();
 
         if (answer == "j")
@@ -102,5 +102,4 @@ public class addProduct
     {
         throw new NotImplementedException();
     }
-
 }
