@@ -1,23 +1,7 @@
-﻿using System.Net.Sockets;
-using System.Xml;
-using static System.Net.Mime.MediaTypeNames;
+﻿namespace WebShop4;
 
-namespace WebShop4;
-public class Customer
+public class SignUp
 {
-    public string UserName { get; set; }
-    public string UserPw { get; set; }
-    public string Cart { get; set; }
-    public int UserId { get; set; }
-    
-    public Customer(string userName, string userPw, string userCart, int userId)
-    {
-        UserName = userName;
-        UserPw = userPw;
-        Cart = userCart;
-        UserId = userId;
-    }
-
     public static void Register()
     {
         string[] customer = File.ReadAllLines("../../../customer.csv");
@@ -25,7 +9,7 @@ public class Customer
         Console.WriteLine("--------------------------");
         Console.WriteLine("Ange ditt namn: ");
         string name = Console.ReadLine();
-        
+
 
         List<string> split = new List<string>();
         foreach (var item in customer)
@@ -38,7 +22,8 @@ public class Customer
             }
         }
 
-        string pw = ""; string pw1 = "";
+        string pw = "";
+        string pw1 = "";
         while (pw != pw1 || string.IsNullOrWhiteSpace(pw))
         {
             Console.WriteLine("Ange önskat lösenord: ");
@@ -47,10 +32,12 @@ public class Customer
             pw1 = Console.ReadLine();
             Console.WriteLine("Du angav inte samma lösenord eller så lämnade du fältet tomt, försök igen");
         }
+
         if (pw == pw1)
         {
             Console.Clear();
-            Console.WriteLine("Grattis, du är nu en registrerad kund!\nVänligen logga in för att få tillgång till ditt nya konto!\n");
+            Console.WriteLine(
+                "Grattis, du är nu en registrerad kund!\nVänligen logga in för att få tillgång till ditt nya konto!\n");
         }
 
         //lägger till alla som registrerar sig i customer.csv
@@ -63,11 +50,10 @@ public class Customer
         string pathCart = $"../../../Carts/{cartName}.csv";
         string newCart = name + "," + pw + "," + GenerateUniqueId();
         File.WriteAllText(pathCart, newCart);
-        
-        
-        
+
+
         SystemLogin.startLogin();
-        
+
         static int GenerateUniqueId()
         {
             return Guid.NewGuid().GetHashCode();

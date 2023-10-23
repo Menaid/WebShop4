@@ -40,7 +40,7 @@ public class SystemLogin
             case 3:
                 Console.Beep(500, 500);
                 Console.Clear();
-                Customer.Register();
+                SignUp.Register();
                 break;
             case 4:
                 Console.Beep(500, 500);
@@ -98,6 +98,8 @@ public class SystemLogin
         return false;
     }
 
+    public static string SignedInUser = null;
+    
     public static void userPage()
     {
         Console.Clear();
@@ -114,6 +116,7 @@ public class SystemLogin
         User userLogin = new User { Username = username, Password = password };
         if (UserExists(userLogin.Username))
         {
+            SignedInUser = userLogin.Username;
             Console.Clear();
             Console.WriteLine("____________________________________");
             Console.WriteLine("\nVälkommen " + userLogin.Username);
