@@ -81,7 +81,7 @@ public class SystemLogin
 
     private static bool AdminExists(string username)
     {
-        if (File.Exists(FileUName))
+        if (File.Exists(FileAName))
         {
             string[] lines = File.ReadAllLines(FileAName);
             foreach (string line in lines)

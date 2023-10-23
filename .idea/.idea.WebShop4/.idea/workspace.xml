@@ -19,6 +19,20 @@
       <change beforePath="$PROJECT_DIR$/customers.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/products.csv" beforeDir="false" afterPath="$PROJECT_DIR$/products.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/signup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + a.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + d.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + f.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + g.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + hej.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + irina.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + pelle.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + sak.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart + testing.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SystemLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/customer.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +54,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e24f887a8fd6b67fdd343e60a03cd8787f27bc915349b033bb154d506a725b66/ConsolePal.Windows.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -71,6 +86,29 @@
     ]
   }
 }</component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Menaid\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Menaid\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\Menaid\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="WebShop4" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -112,6 +150,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
