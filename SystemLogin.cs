@@ -13,7 +13,6 @@ public class SystemLogin
         Console.WriteLine("2. Kund login");
         Console.WriteLine("3. Registrera dig som ny kund");
         Console.WriteLine("4. Exit");
-        Console.WriteLine("5. add");
         int userChoice;
 
         while (true)
@@ -21,7 +20,7 @@ public class SystemLogin
             Console.Write("\nVälj alternativ: ");
             if (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > 5)
             {
-                Console.WriteLine("\nOgiltigt val. Var god försök igen.\n");
+                Console.WriteLine("Ogiltigt val. Var god försök igen.");
                 continue;
             }
             break;
@@ -46,9 +45,6 @@ public class SystemLogin
                 //Console.Beep(500, 500);
                 Console.WriteLine("Hej då!");
                 Environment.Exit(0);
-                break;
-            case 5:
-                AddProduct.productMenu();
                 break;
         }
 

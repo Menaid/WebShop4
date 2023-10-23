@@ -8,7 +8,6 @@ public class AddProduct
 
     public static void productMenu()
     {
-        ActiveCart.CartInUse();
         Console.Clear();
         Console.WriteLine("Hej " + SystemLogin.SignedInUser);
         Console.WriteLine("------------------------------");
@@ -119,21 +118,14 @@ public class AddProduct
             Console.WriteLine("Fel inmatning, försök på nytt.");
             addToCart();
         }
-        // else
-        // {
-        //     int timmer = 2000;
-        //     Console.Clear();
-        //     Console.WriteLine("---------------");
-        //     Console.WriteLine("Invalid choice.");
-        //     Console.WriteLine("---------------");
-        //     Thread.Sleep(timmer);
-        //     Console.Clear();
-        //     addToCart();
-        // }
+        
     }
 
     public static void RemoveFromCart()
     {
-        throw new NotImplementedException();
+        int timmer = 2000;
+        Console.WriteLine("NotImplementedException");
+        Thread.Sleep(timmer);
+        productMenu();
     }
 }
