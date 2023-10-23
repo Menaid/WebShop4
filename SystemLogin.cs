@@ -48,7 +48,7 @@ public class SystemLogin
                 Environment.Exit(0);
                 break;
             case 5:
-                addProduct.productMenu();
+                AddProduct.productMenu();
                 break;
         }
 
@@ -125,7 +125,7 @@ public class SystemLogin
             Console.WriteLine("\nVälkommen " + userLogin.Username);
             Console.WriteLine("____________________________________");
             Thread.Sleep(timer);
-            addProduct.productMenu();
+            AddProduct.productMenu();
         }
         else
         {

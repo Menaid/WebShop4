@@ -1,6 +1,7 @@
-﻿using WebShop4;
+﻿using System.Runtime.Intrinsics.Arm;
+using WebShop4;
 
-public class addProduct
+public class AddProduct
 {
     const string productList = "../../../products.csv";
     public static string[] products = File.ReadAllLines(productList);
@@ -9,8 +10,8 @@ public class addProduct
     {
         ActiveCart.CartInUse();
         Console.Clear();
-        Console.WriteLine("Hej ");
-        Console.WriteLine("\n------------------------------");
+        Console.WriteLine("Hej " + SystemLogin.SignedInUser);
+        Console.WriteLine("------------------------------");
         Console.WriteLine("1. lägga till produkt");
         Console.WriteLine("2. ta bort produkt");
         Console.WriteLine("3. logga ut:");
@@ -57,7 +58,7 @@ public class addProduct
     {
         var userFilePath = "../../../Carts/Cart." + SystemLogin.SignedInUser + ".csv";
         Console.Clear();
-        Console.WriteLine("Available Products:");
+        Console.WriteLine("Tillgängliga produkter:");
         Console.WriteLine("-------------------");
         showProductsList();
         Console.WriteLine("-------------------");
@@ -72,30 +73,63 @@ public class addProduct
             showProductsList();
             Console.WriteLine("--------------");
             Console.WriteLine("Vilken produkt vill du lägga till ? ");
-            int choice = int.Parse(Console.ReadLine());
-            if (choice >= 1 && choice <= products.Length)
+
+            int newChoice;
+            if (int.TryParse(Console.ReadLine(), out newChoice))
             {
-                string selectedProduct = products[choice - 1];
-                File.AppendAllLines(userFilePath, selectedProduct.Split(""));
-                Console.WriteLine($"{selectedProduct} lagt till i din kundvagn.");
+                if (newChoice >= 1 && newChoice <= products.Length)
+                {
+                    string selectedProduct = products[newChoice - 1];
+                    File.AppendAllLines(userFilePath, selectedProduct.Split(""));
+                    Console.WriteLine($"{selectedProduct} lagt till i din kundvagn.");
+                    addToCart();
+                }
+                else
+                {
+                    int timmer = 2000;
+                    Console.Clear();
+                    Console.WriteLine("---------------");
+                    Console.WriteLine("Fel inmatning.");
+                    Console.WriteLine("---------------");
+                    Thread.Sleep(timmer);
+                    Console.Clear();
+                    addToCart();
+                }
             }
             else
             {
                 int timmer = 2000;
                 Console.Clear();
                 Console.WriteLine("---------------");
-                Console.WriteLine("Invalid choice.");
+                Console.WriteLine("Fel inmatning.");
                 Console.WriteLine("---------------");
                 Thread.Sleep(timmer);
                 Console.Clear();
                 addToCart();
             }
         }
-        else
+
+        else if (answer == "n")
         {
-            Console.Clear();
-            SystemLogin.startLogin();
+            productMenu();
         }
+        else if (answer != "j" || answer != "n")
+        {
+            int timmer = 2000;
+            Console.WriteLine("Fel inmatning, försök på nytt.");
+            addToCart();
+        }
+        // else
+        // {
+        //     int timmer = 2000;
+        //     Console.Clear();
+        //     Console.WriteLine("---------------");
+        //     Console.WriteLine("Invalid choice.");
+        //     Console.WriteLine("---------------");
+        //     Thread.Sleep(timmer);
+        //     Console.Clear();
+        //     addToCart();
+        // }
     }
 
     public static void RemoveFromCart()
