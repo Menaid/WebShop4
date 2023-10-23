@@ -8,26 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2785802b-e65c-4622-a6b6-5afccbb9e0f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ActiveCart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + a.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + d.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + f.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + g.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + hej.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + irina.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + mm.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + pelle.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + sak.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + test.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/Cart + testing.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carts/ee.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Products.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SystemLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SystemLogin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addProduct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addProduct.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/customer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/signup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebShop4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebShop4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart.menaid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Carts/Cart.menaid.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +95,7 @@
       <workItem from="1697794499673" duration="266000" />
       <workItem from="1697794807059" duration="19658000" />
       <workItem from="1697903503306" duration="2878000" />
-      <workItem from="1698049507848" duration="3100000" />
+      <workItem from="1698049507848" duration="4529000" />
     </task>
     <servers />
   </component>
