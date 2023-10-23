@@ -9,6 +9,16 @@
   <component name="ChangeListManager">
     <list default="true" id="2785802b-e65c-4622-a6b6-5afccbb9e0f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebShop4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebShop4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ActiveCart.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AddProduct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AddProduct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart.Lukas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Carts/Cart.Lukas.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carts/Cart.menaid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Carts/Cart.menaid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Products.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SystemLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/customer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.csv" beforeDir="false" afterPath="$PROJECT_DIR$/products.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/signup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Carts/Cart + a.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Carts/Cart + d.csv" beforeDir="false" />
@@ -32,6 +42,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/399ad7d84e58e98fe2e68773a4645e29a853e763edb926f62ba1c47963ba2/Marshal.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a994edf5ab6b46e55fc1e49cff015d6702e57f4ebfaac1a730c3b6d8271c3c/NativeLibrary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c085c1d6a9bd79db8626a8f982554152f9024/LibraryImports.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d43fa890c7fc70c8ba3d3d33ee567045a39b9710f73b3ced707d8ab62d83/Console.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e24f887a8fd6b67fdd343e60a03cd8787f27bc915349b033bb154d506a725b66/ConsolePal.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -41,6 +63,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;login&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Menaid\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Menaid\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Menaid\\AppData\\Local\\Symbols\\src&quot;
+    ]
+  }
+}</component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -94,12 +139,17 @@
       <updated>1697653542799</updated>
       <workItem from="1697653544612" duration="620000" />
       <workItem from="1697654189677" duration="734000" />
+      <workItem from="1697794499673" duration="266000" />
+      <workItem from="1697794807059" duration="19658000" />
+      <workItem from="1697903503306" duration="2878000" />
+      <workItem from="1698049507848" duration="4529000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

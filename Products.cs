@@ -1,4 +1,3 @@
-
 namespace WebShop4;
 
 public class Products
@@ -67,7 +66,7 @@ const string productFile = "../../../products.csv";
             {
                 if (int.TryParse(quantity, out newQuantity))
                 {
-                    string? item = product + "-" + newPrice + "-" + newQuantity + "\n";
+                    string? item = product + "," + newPrice + "," + newQuantity + "\n";
                     File.AppendAllText(productFile, item);
                     Console.Clear();
                     EditCatalog();
@@ -101,14 +100,14 @@ const string productFile = "../../../products.csv";
             {
 
                 var line = lines[newRemove];
-                var productInfo = line.Split("-");
+                var productInfo = line.Split(",");
                 int amountItem = int.Parse(productInfo[2]);
 
                 if (amountItem > 1 && amountItem >= newRemoveAmount)
                 {
                     amountItem -= newRemoveAmount;
                     productInfo[2] = amountItem.ToString();
-                    lines[newRemove] = productInfo[0] + "-" + productInfo[1] + "-" + productInfo[2];
+                    lines[newRemove] = productInfo[0] + "," + productInfo[1] + "," + productInfo[2];
                 }
                 if (amountItem <= 0)
                 {

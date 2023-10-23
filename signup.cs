@@ -23,13 +23,13 @@ public class Customer
         Console.WriteLine("Registrera dig som ny kund");
         Console.WriteLine("--------------------------");
         Console.WriteLine("Ange ditt namn: ");
-        string name = Console.ReadLine();
+        string name = Console.ReadLine().ToLower();
         
 
         List<string> split = new List<string>();
         foreach (var item in customer)
         {
-            split = new List<string>(item.Split("-"));
+            split = new List<string>(item.Split(","));
             if (name == split[0])
             {
                 Console.WriteLine("Det finns redan en användare med namnet " + name + " vänligen välj ett annat.");
@@ -55,21 +55,12 @@ public class Customer
 
 
         //lägger till alla som registrerar sig i customer.csv
-        string newCustomer = name + "-" + pw + GenerateUniqueId();
+        string newCustomer = name + "," + pw + "," + GenerateUniqueId();
         string path = "../../../customer.csv";
         File.AppendAllText(path, newCustomer + Environment.NewLine);
 
-
-        //skapar en ny .csv fil för var person som registrerar sig
-        string cartName = $"Cart + {name}";
-        string pathCart = $"../../../Carts/{cartName}.csv";
-        string newCart = name + "-" + pw + "-" + GenerateUniqueId();
-        File.WriteAllText(pathCart, newCart);
-
         SystemLogin.startLogin();
-        Customer Costumer = new Customer(userName: name, userPw: pw, userCart: newCart, userId: GenerateUniqueId());
-
-
+        
         static int GenerateUniqueId()
         {
             return Guid.NewGuid().GetHashCode();
