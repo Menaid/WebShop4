@@ -60,7 +60,7 @@ public class SystemLogin
         Console.Clear();
 
         User adminLogin = new User { Username = username, Password = password };
-        if (AdminExists(adminLogin.Username) && AdminExists(adminLogin.Password))
+        if (AdminExists(adminLogin.Username, adminLogin.Password))
         {
             Console.WriteLine("____________________________________");
             Console.WriteLine("\nVälkommen " + adminLogin.Username);
@@ -79,7 +79,7 @@ public class SystemLogin
         }
     }
 
-    private static bool AdminExists(string username)
+    private static bool AdminExists(string username, string password)
     {
         if (File.Exists(FileAName))
         {
@@ -87,7 +87,7 @@ public class SystemLogin
             foreach (string line in lines)
             {
                 string[] parts = line.Split(',');
-                if (parts.Length == 2 && parts[0] == username.ToLower())
+                if (parts.Length == 2 && parts[0] == username.ToLower() && parts[1] == password)
                 {
                     return true;
                 }
@@ -112,7 +112,7 @@ public class SystemLogin
         Console.WriteLine("----------------");
 
         User userLogin = new User { Username = username, Password = password };
-        if (UserExists(userLogin.Username))
+        if (UserExists(userLogin.Username, userLogin.Password))
         {
             SignedInUser = userLogin.Username;
             int timer = 2000;
@@ -136,7 +136,7 @@ public class SystemLogin
 
     }
 
-    private static bool UserExists(string username)
+    private static bool UserExists(string username, string password)
     {
         if (File.Exists(FileUName))
         {
@@ -144,7 +144,7 @@ public class SystemLogin
             foreach (string line in lines)
             {
                 string[] parts = line.Split(',');
-                if (parts.Length == 3 && parts[0] == username.ToLower())
+                if (parts.Length == 3 && parts[0] == username.ToLower() && parts[1] == password)
                 {
                     return true;
                 }
