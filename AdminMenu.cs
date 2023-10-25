@@ -9,11 +9,11 @@ public class AdminMenu
         Console.WriteLine("För att redigera katalogen ange: 2");
         Console.WriteLine("För att logga ut ange: 3");
         var AdminInput1 = Console.ReadLine();
-        
+
         switch (AdminInput1)
         {
             case "1":
-                CustomerInfo.EditInfo();
+                CustomerInfo.EditCustomer();
                 break;
             case "2":
                 Products.EditCatalog();
@@ -21,6 +21,11 @@ public class AdminMenu
             case "3":
                 Console.Clear();
                 SystemLogin.startLogin();
+                break;
+            default:
+                Console.Clear();
+                Console.WriteLine("Fel inmatning!");
+                Menu();
                 break;
         }
     }
