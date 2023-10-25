@@ -24,10 +24,15 @@ public class Products
                 Console.Clear();
                 AdminMenu.Menu();
                 break;
+            default:
+                Console.Clear();
+                Console.WriteLine("Fel inmatning!");
+                EditCatalog();
+                break;
         }
     }
 
-const string productFile = "../../../products.csv";
+    const string productFile = "../../../products.csv";
     public static string[] lines = File.ReadAllLines(productFile);
     public static void ShowItems()
     {
@@ -109,11 +114,18 @@ const string productFile = "../../../products.csv";
                     productInfo[2] = amountItem.ToString();
                     lines[newRemove] = productInfo[0] + "," + productInfo[1] + "," + productInfo[2];
                 }
-                if (amountItem <= 0)
+                else if (amountItem <= 0)
                 {
                     var erase = lines.ToList();
                     erase.RemoveAt(newRemove);
                     lines = erase.ToArray();
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Alternativet finns inte!");
+                    Console.WriteLine("Försökt igen!");
+                    RemoveItems();
                 }
                 File.WriteAllLines(productFile, lines);
                 Console.Clear();
