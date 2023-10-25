@@ -114,7 +114,7 @@ public class Products
                     productInfo[2] = amountItem.ToString();
                     lines[newRemove] = productInfo[0] + "," + productInfo[1] + "," + productInfo[2];
                 }
-                else if (amountItem <= 0)
+                if (amountItem <= 0)
                 {
                     var erase = lines.ToList();
                     erase.RemoveAt(newRemove);
