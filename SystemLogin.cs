@@ -1,5 +1,4 @@
-﻿using System;
-using WebShop4;
+﻿using WebShop4;
 
 public class SystemLogin
 {
@@ -18,36 +17,37 @@ public class SystemLogin
         while (true)
         {
             Console.Write("\nVälj alternativ: ");
-            if (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > 5)
+            if (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > 4)
             {
                 Console.WriteLine("Ogiltigt val. Var god försök igen.");
-                continue;
             }
-            break;
+            else
+            {
+                break;
+            }
         }
 
         switch (userChoice)
         {
             case 1:
-               //Console.Beep(500, 500);
+                Console.Beep(500, 500);
                 adminPage();
                 break;
             case 2:
-               //Console.Beep(500, 500);
+                Console.Beep(500, 500);
                 userPage();
                 break;
             case 3:
-                //Console.Beep(500, 500);
+                Console.Beep(500, 500);
                 Console.Clear();
                 Customer.Register();
                 break;
             case 4:
-                //Console.Beep(500, 500);
+                Console.Beep(500, 500);
                 Console.WriteLine("Hej då!");
                 Environment.Exit(0);
                 break;
         }
-
     }
 
     public static void adminPage()
@@ -59,8 +59,10 @@ public class SystemLogin
         string password = Console.ReadLine();
         Console.Clear();
 
-        User adminLogin = new User { Username = username, Password = password };
-        if (AdminExists(adminLogin.Username) && AdminExists(adminLogin.Password))
+
+        User adminLogin = new User(username, password);
+        if (AdminExists(adminLogin))
+
         {
             Console.WriteLine("____________________________________");
             Console.WriteLine("\nVälkommen " + adminLogin.Username);
@@ -69,17 +71,17 @@ public class SystemLogin
         }
         else
         {
-            int timer = 2000;
             Console.WriteLine("_____________________________________________");
             Console.WriteLine("\nAdminnamn eller lösenord fel. Testa igen.\n");
             Console.WriteLine("_____________________________________________");
-            Thread.Sleep(timer);
             Console.Clear();
             startLogin();
         }
     }
 
-    private static bool AdminExists(string username)
+
+    private static bool AdminExists(User admin)
+
     {
         if (File.Exists(FileAName))
         {
@@ -87,7 +89,8 @@ public class SystemLogin
             foreach (string line in lines)
             {
                 string[] parts = line.Split(',');
-                if (parts.Length == 2 && parts[0] == username.ToLower())
+
+                if (parts.Length == 2 && parts[0] == admin.Username && parts[1] == admin.Password)
                 {
                     return true;
                 }
@@ -98,45 +101,42 @@ public class SystemLogin
     }
 
     public static string SignedInUser = null;
+
     public static void userPage()
     {
         Console.Clear();
         Console.WriteLine("----------------");
         Console.Write("Ange användarnamn: ");
         Console.WriteLine("\n----------------");
-        string username = Console.ReadLine();
+        string username = Console.ReadLine().ToLower();
         Console.WriteLine("----------------");
         Console.Write("Ange lösenord: ");
         Console.WriteLine("\n----------------");
         string password = Console.ReadLine();
         Console.WriteLine("----------------");
 
-        User userLogin = new User { Username = username, Password = password };
-        if (UserExists(userLogin.Username))
+        User userLogin = new User(username, password);
+        if (UserExists(userLogin))
+
         {
             SignedInUser = userLogin.Username;
-            int timer = 2000;
             Console.Clear();
             Console.WriteLine("____________________________________");
             Console.WriteLine("\nVälkommen " + userLogin.Username);
             Console.WriteLine("____________________________________");
-            Thread.Sleep(timer);
             AddProduct.productMenu();
         }
         else
         {
-            int timer = 2000;
             Console.WriteLine("_______________________________________________");
             Console.WriteLine("\aAnvändarnamn eller lösenord fel. Testa igen.\n");
             Console.WriteLine("_______________________________________________");
-            Thread.Sleep(timer);
             Console.Clear();
             startLogin();
         }
-
     }
 
-    private static bool UserExists(string username)
+    private static bool UserExists(User userLogin)
     {
         if (File.Exists(FileUName))
         {
@@ -144,7 +144,8 @@ public class SystemLogin
             foreach (string line in lines)
             {
                 string[] parts = line.Split(',');
-                if (parts.Length == 3 && parts[0] == username.ToLower())
+
+                if (parts.Length == 3 && parts[0] == userLogin.Username && parts[1] == userLogin.Password)
                 {
                     return true;
                 }
