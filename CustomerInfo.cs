@@ -13,6 +13,7 @@ public class CustomerInfo
         Console.WriteLine();
 
 
+        CustomerList.Clear();
         foreach (string item in file)//kopierar användare från fil till lista
         {
             CustomerList.Add(item);
@@ -37,59 +38,46 @@ public class CustomerInfo
         string number = Console.ReadLine();
         if (int.TryParse(number, out userNumber))
         {
-            if (userNumber <= count)
+            if (userNumber <= CustomerList.Count)
             {
 
                 userNumber -= 1;
 
-                for (int i = 0; i < file.Length; i++) //loop för att se ifall index = input-1
+                var thing = CustomerList[userNumber].Split(',');// separerar vald linje på "-"
+
+                Console.WriteLine("För att ändra användarnamn ange: 1\nFör att ändra lösenord ange: 2");
+                string nameOrPassword = Console.ReadLine();
+
+                switch (nameOrPassword)
                 {
-                    if (userNumber == i)
-                    {
-                        var thing = CustomerList[userNumber].Split(',');// separerar vald linje på "-"
+                    case "1":
+                        Console.WriteLine("Nytt namn: ");
+                        var NewName = Console.ReadLine();
+                        thing[0] = NewName;
 
-                        Console.WriteLine("För att ändra användarnamn ange: 1\nFör att ändra lösenord ange: 2");
-                        string nameOrPassword = Console.ReadLine();
-
-                        switch (nameOrPassword)
-                        {
-                            case "1":
-                                Console.WriteLine("Nytt namn: ");
-                                var NewName = Console.ReadLine();
-                                thing[0] = NewName;
-
-                                break;
-                            case "2":
-                                Console.WriteLine("Nytt lösenord: ");
-                                var NewPassword = Console.ReadLine();
-                                thing[1] = NewPassword;
-                                break;
-                            default:
-                                EditCustomer();
-                                break;
-                        }
-
-                        file[userNumber] = thing[0] + "," + thing[1] + "," + thing[2];
-                        File.WriteAllLines("../../../customer.csv", file);
-                        Console.Clear();
-                        AdminMenu.Menu();
-
-                    }
-                    else if (number == "0")
-                    {
-                        Console.Clear();
-                        AdminMenu.Menu();
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Ogiltigt val. ");
-                        Console.WriteLine();
+                        break;
+                    case "2":
+                        Console.WriteLine("Nytt lösenord: ");
+                        var NewPassword = Console.ReadLine();
+                        thing[1] = NewPassword;
+                        break;
+                    default:
                         EditCustomer();
-                    }
+                        break;
                 }
+
+                file[userNumber] = thing[0] + "," + thing[1] + "," + thing[2];
+                File.WriteAllLines("../../../customer.csv", file);
+                Console.Clear();
+                AdminMenu.Menu();
+
             }
-            else if (count < userNumber)
+            else if (number == "0")
+            {
+                Console.Clear();
+                AdminMenu.Menu();
+            }
+            else
             {
                 Console.Clear();
                 Console.WriteLine("Ogiltigt val. ");
@@ -101,9 +89,13 @@ public class CustomerInfo
         else
         {
             Console.Clear();
-            Console.WriteLine("Ogiltigt val!");
+            Console.WriteLine("Ogiltigt val. ");
+            Console.WriteLine();
             EditCustomer();
         }
 
     }
+
 }
+
+
