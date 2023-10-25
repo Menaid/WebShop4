@@ -40,7 +40,11 @@ public class CustomerInfo
         {
             if (userNumber <= CustomerList.Count)
             {
-
+                if (number == "0")
+                {
+                    Console.Clear();
+                    AdminMenu.Menu();
+                }
                 userNumber -= 1;
 
                 var thing = CustomerList[userNumber].Split(',');// separerar vald linje på "-"
@@ -71,11 +75,6 @@ public class CustomerInfo
                 Console.Clear();
                 AdminMenu.Menu();
 
-            }
-            else if (number == "0")
-            {
-                Console.Clear();
-                AdminMenu.Menu();
             }
             else
             {
