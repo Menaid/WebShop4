@@ -24,7 +24,6 @@ public class Customer
         Console.WriteLine("--------------------------");
         Console.WriteLine("Ange ditt namn: ");
         string name = Console.ReadLine().ToLower();
-        
 
         List<string> split = new List<string>();
         foreach (var item in customer)
