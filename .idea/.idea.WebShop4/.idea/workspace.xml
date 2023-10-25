@@ -9,6 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2785802b-e65c-4622-a6b6-5afccbb9e0f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebShop4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebShop4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SystemLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admins.csv" beforeDir="false" afterPath="$PROJECT_DIR$/admins.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/customer.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +65,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Project.WebShop4">
+  <component name="RunManager">
     <configuration name="WebShop4" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -95,6 +99,7 @@
       <workItem from="1697794807059" duration="19658000" />
       <workItem from="1697903503306" duration="2878000" />
       <workItem from="1698049507848" duration="4529000" />
+      <workItem from="1698169149015" duration="3087000" />
     </task>
     <servers />
   </component>
