@@ -34,6 +34,7 @@ public class Products
 
     const string productFile = "../../../products.csv";
     public static string[] lines = File.ReadAllLines(productFile);
+
     public static void ShowItems()
     {
         for (int i = 0; i < lines.Length; i++)
@@ -66,7 +67,6 @@ public class Products
         }
         else
         {
-
             if (float.TryParse(price, out newPrice))
             {
                 if (int.TryParse(quantity, out newQuantity))
@@ -103,18 +103,15 @@ public class Products
             string removeAmount = Console.ReadLine();
             if (int.TryParse(removeAmount, out newRemoveAmount))
             {
-
                 var line = lines[newRemove];
                 var productInfo = line.Split(",");
                 int amountItem = int.Parse(productInfo[2]);
-
-                if (amountItem > 1 && amountItem >= newRemoveAmount)
-                {
-                    amountItem -= newRemoveAmount;
-                    productInfo[2] = amountItem.ToString();
-                    lines[newRemove] = productInfo[0] + "," + productInfo[1] + "," + productInfo[2];
-                }
-                else if (amountItem <= 0)
+                
+                amountItem -= newRemoveAmount;
+                productInfo[2] = amountItem.ToString();
+                lines[newRemove] = productInfo[0] + "," + productInfo[1] + "," + productInfo[2];
+                
+                if (amountItem <= 0)
                 {
                     var erase = lines.ToList();
                     erase.RemoveAt(newRemove);
