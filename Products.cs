@@ -39,8 +39,7 @@ public class Products
     {
         for (int i = 0; i < lines.Length; i++)
         {
-            var a = i + 1;
-            Console.WriteLine(a + ": " + lines[i]);
+            Console.WriteLine(i + 1 + ": " + lines[i]);
         }
     }
 
@@ -125,7 +124,6 @@ public class Products
                     Console.WriteLine("Försökt igen!");
                     RemoveItems();
                 }
-
                 File.WriteAllLines(productFile, lines);
                 Console.Clear();
                 EditCatalog();
